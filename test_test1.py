@@ -40,4 +40,4 @@ def test_schema():
     is_valid, msg = validate_json(json_file)
     print(msg)
 
-    assert is_valid == true 
+    assert is_valid == True 
