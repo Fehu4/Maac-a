@@ -1,18 +1,43 @@
-from lxml import etree
+import json
+import jsonschema
+from jsonschema import validate
 
-def inc(x):
-    return x + 1
 
-def validate(xml_path: str, xsd_path: str) -> bool:
+def get_schema():
+    """This function loads the given schema available"""
+    with open('json_schema.schema.json', 'r') as file:
+        schema = json.load(file)
+    return schema
 
-    xmlschema_doc = etree.parse(xsd_path)
-    xmlschema = etree.XMLSchema(xmlschema_doc)
+def get_json():
+    """This function loads json file"""
+    with open('json_file.json', 'r') as file:
+        json_file = json.load(file)
+    return json_file
+    
 
-    xml_doc = etree.parse(xml_path)
-    result = xmlschema.validate(xml_doc)
+def validate_json(json_data):
+    """REF: https://json-schema.org/ """
+    # Describe what kind of json you expect.
+    execute_api_schema = get_schema()
 
-    return result
+    try:
+        validate(instance=json_data, schema=execute_api_schema)
+    except jsonschema.exceptions.ValidationError as err:
+        print(err)
+        err = "Given JSON data is InValid"
+        return False, err
+
+    message = "Given JSON data is Valid"
+    return True, message
 
 
 def test_schema():
-    assert validate("json_file.json","json_schema.schema.json") == true 
+    with open('json_file.json', 'r') as file:
+        json_file = json.load(file)
+
+    # validate it
+    is_valid, msg = validate_json(json_file)
+    print(msg)
+
+    assert is_valid == true 
