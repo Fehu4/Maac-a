@@ -5,13 +5,13 @@ from jsonschema import validate
 
 def get_schema():
     """This function loads the given schema available"""
-    with open('json_schema.schema.json', 'r') as file:
+    with open("json_schema.schema.json", "r") as file:
         schema = json.load(file)
     return schema
 
 def get_json():
     """This function loads json file"""
-    with open('json_file.json', 'r') as file:
+    with open("json_file.json", "r") as file:
         json_file = json.load(file)
     return json_file
     
