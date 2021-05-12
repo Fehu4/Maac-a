@@ -433,7 +433,7 @@
                                   "type": "object",
                                   "properties": {
                                     "@OriginalSourceSystemId": {
-                                      "type": "string"
+                                      "type": "integer"
                                     },
                                     "@OSSDataSetName": {
                                       "type": "string"
