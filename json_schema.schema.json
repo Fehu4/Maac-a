@@ -92,30 +92,6 @@
                     "Key",
                     "Value"
                   ]
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "@Id": {
-                      "type": "integer"
-                    },
-                    "Name": {
-                      "type": "string"
-                    },
-                    "Key": {
-                      "type": "string",
-                      "pattern": "^[0-9]{4}:([0-9]*.)*[0-9]$"
-                    },
-                    "Value": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "@Id",
-                    "Name",
-                    "Key",
-                    "Value"
-                  ]
                 }
               ]
             },
@@ -161,25 +137,6 @@
                     "BusinessDescription": {
                       "type": "array",
                       "items": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "@Lang": {
-                              "type": "string"
-                            },
-                            "Name": {
-                              "type": "string"
-                            },
-                            "Definition": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "@Lang",
-                            "Name",
-                            "Definition"
-                          ]
-                        },
                         {
                           "type": "object",
                           "properties": {
@@ -257,25 +214,6 @@
                                 "LocalKeyCount",
                                 "ForeignKeyCount"
                               ]
-                            },
-                            {
-                              "type": "object",
-                              "properties": {
-                                "@Name": {
-                                  "type": "string"
-                                },
-                                "LocalKeyCount": {
-                                  "type": "string"
-                                },
-                                "ForeignKeyCount": {
-                                  "type": "string"
-                                }
-                              },
-                              "required": [
-                                "@Name",
-                                "LocalKeyCount",
-                                "ForeignKeyCount"
-                              ]
                             }
                           ]
                         }
@@ -289,29 +227,6 @@
                     "Classification": {
                       "type": "array",
                       "items": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "@Id": {
-                              "type": "integer"
-                            },
-                            "Name": {
-                              "type": "string"
-                            },
-                            "Key": {
-                              "type": "string"
-                            },
-                            "Value": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "@Id",
-                            "Name",
-                            "Key",
-                            "Value"
-                          ]
-                        },
                         {
                           "type": "object",
                           "properties": {
@@ -390,21 +305,6 @@
                                     "Filed": {
                                       "type": "array",
                                       "items": [
-                                        {
-                                          "type": "object",
-                                          "properties": {
-                                            "@FileName": {
-                                              "type": "string"
-                                            },
-                                            "FieldName": {
-                                              "type": "string"
-                                            }
-                                          },
-                                          "required": [
-                                            "@FileName",
-                                            "FieldName"
-                                          ]
-                                        },
                                         {
                                           "type": "object",
                                           "properties": {
