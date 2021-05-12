@@ -367,7 +367,7 @@
                           "type": "object",
                           "properties": {
                             "@Id": {
-                              "type": "string"
+                              "type": "integer"
                             },
                             "Name": {
                               "type": "string"
@@ -398,7 +398,7 @@
                               "type": "string"
                             },
                             "@SourceSystemId": {
-                              "type": "string"
+                              "type": "integer"
                             },
                             "Default": {
                               "type": "object",

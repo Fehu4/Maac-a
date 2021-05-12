@@ -28,13 +28,13 @@
          ],
          "Classification":[
             {
-               "@Id":"1234",
+               "@Id":1234,
                "Name":"Obszar biznesowy",
                "Key":"2021:1.2.3.4",
                "Value":"Klient indywidualny"
             },
             {
-               "@Id":"324",
+               "@Id":324,
                "Name":"Ontologia Danych",
                "Key":"2021:3.23.4",
                "Value":"Osoby"
@@ -94,13 +94,13 @@
                },
                "Classification":[
                   {
-                     "@Id":"1234",
+                     "@Id":1234,
                      "Name":"Obszar biznesowy",
                      "Key":"2021:1.2.3.4",
                      "Value":"Klient indywidualny"
                   },
                   {
-                     "@Id":"324",
+                     "@Id":324,
                      "Name":"Ontologia Danych",
                      "Key":"2021:3.23.4",
                      "Value":"Osoby"
@@ -109,7 +109,7 @@
                "Mapping":[
                   {
                      "@TargetDBId":"DDHDD08P",
-                     "@SourceSystemId":"5118",
+                     "@SourceSystemId":5118,
                      "Default":{
                         "NOT NULL":true,
                         "Description":"Brak wartości niedopuszczalny"
