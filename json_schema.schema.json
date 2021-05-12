@@ -38,21 +38,6 @@
                     "@Type",
                     "Execute"
                   ]
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "@Type": {
-                      "type": "string"
-                    },
-                    "Execute": {
-                      "type": "boolean"
-                    }
-                  },
-                  "required": [
-                    "@Type",
-                    "Execute"
-                  ]
                 }
               ]
             },
