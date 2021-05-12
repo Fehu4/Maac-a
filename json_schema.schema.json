@@ -78,26 +78,6 @@
                     "Name",
                     "Definition"
                   ]
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "@Lang": {
-                      "type": "string"
-                    },
-                    "Name": {
-                      "type": "string"
-                    },
-                    "Definition": {
-                      "type": "string",
-                      "maxLength": 256
-                    }
-                  },
-                  "required": [
-                    "@Lang",
-                    "Name",
-                    "Definition"
-                  ]
                 }
               ]
             },
