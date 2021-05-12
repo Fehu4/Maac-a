@@ -18,7 +18,8 @@
               "type": "string"
             },
             "Directive": {
-              "type": "string"
+              "type": "string",
+              "enum": ["Create", "Alter", "Delete", "Leave"]
             },
             "LoadFrequency": {
               "type": "array",
