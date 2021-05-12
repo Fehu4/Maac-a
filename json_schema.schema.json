@@ -16,12 +16,507 @@
             },
             "Directive": {
               "type": "string"
+            },
+            "LoadFrequency": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Type": {
+                      "type": "string"
+                    },
+                    "Execute": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "@Type",
+                    "Execute"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Type": {
+                      "type": "string"
+                    },
+                    "Execute": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "@Type",
+                    "Execute"
+                  ]
+                }
+              ]
+            },
+            "BusinessDescription": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Lang": {
+                      "type": "string"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "Definition": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@Lang",
+                    "Name",
+                    "Definition"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Lang": {
+                      "type": "string"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "Definition": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@Lang",
+                    "Name",
+                    "Definition"
+                  ]
+                }
+              ]
+            },
+            "Classification": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Id": {
+                      "type": "string"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "Key": {
+                      "type": "string"
+                    },
+                    "Value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@Id",
+                    "Name",
+                    "Key",
+                    "Value"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Id": {
+                      "type": "string"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "Key": {
+                      "type": "string"
+                    },
+                    "Value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@Id",
+                    "Name",
+                    "Key",
+                    "Value"
+                  ]
+                }
+              ]
+            },
+            "AccountableParty": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Type": {
+                      "type": "string"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "SKP": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@Type",
+                    "Name",
+                    "SKP"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Type": {
+                      "type": "string"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "SKP": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@Type",
+                    "Name",
+                    "SKP"
+                  ]
+                }
+              ]
+            },
+            "Field": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "@Name": {
+                      "type": "string"
+                    },
+                    "Sequence": {
+                      "type": "integer"
+                    },
+                    "Directive": {
+                      "type": "string"
+                    },
+                    "BusinessDescription": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "@Lang": {
+                              "type": "string"
+                            },
+                            "Name": {
+                              "type": "string"
+                            },
+                            "Definition": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "@Lang",
+                            "Name",
+                            "Definition"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "@Lang": {
+                              "type": "string"
+                            },
+                            "Name": {
+                              "type": "string"
+                            },
+                            "Definition": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "@Lang",
+                            "Name",
+                            "Definition"
+                          ]
+                        }
+                      ]
+                    },
+                    "DataType": {
+                      "type": "string"
+                    },
+                    "Constraints": {
+                      "type": "object",
+                      "properties": {
+                        "UNIQUE": {
+                          "type": "boolean"
+                        },
+                        "PRIMARY": {
+                          "type": "boolean"
+                        },
+                        "INDEX": {
+                          "type": "boolean"
+                        },
+                        "NOT NULL": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "UNIQUE",
+                        "PRIMARY",
+                        "INDEX",
+                        "NOT NULL"
+                      ]
+                    },
+                    "ForeignKeyMapping": {
+                      "type": "object",
+                      "properties": {
+                        "Directive": {
+                          "type": "string"
+                        },
+                        "hasForigenKey": {
+                          "type": "boolean"
+                        },
+                        "ForeignKey": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "@Name": {
+                                  "type": "string"
+                                },
+                                "LocalKeyCount": {
+                                  "type": "string"
+                                },
+                                "ForeignKeyCount": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "@Name",
+                                "LocalKeyCount",
+                                "ForeignKeyCount"
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "@Name": {
+                                  "type": "string"
+                                },
+                                "LocalKeyCount": {
+                                  "type": "string"
+                                },
+                                "ForeignKeyCount": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "@Name",
+                                "LocalKeyCount",
+                                "ForeignKeyCount"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "Directive",
+                        "hasForigenKey",
+                        "ForeignKey"
+                      ]
+                    },
+                    "Classification": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "@Id": {
+                              "type": "string"
+                            },
+                            "Name": {
+                              "type": "string"
+                            },
+                            "Key": {
+                              "type": "string"
+                            },
+                            "Value": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "@Id",
+                            "Name",
+                            "Key",
+                            "Value"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "@Id": {
+                              "type": "string"
+                            },
+                            "Name": {
+                              "type": "string"
+                            },
+                            "Key": {
+                              "type": "string"
+                            },
+                            "Value": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "@Id",
+                            "Name",
+                            "Key",
+                            "Value"
+                          ]
+                        }
+                      ]
+                    },
+                    "Mapping": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "@TargetDBId": {
+                              "type": "string"
+                            },
+                            "@SourceSystemId": {
+                              "type": "string"
+                            },
+                            "Default": {
+                              "type": "object",
+                              "properties": {
+                                "NOT NULL": {
+                                  "type": "boolean"
+                                },
+                                "Description": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "NOT NULL",
+                                "Description"
+                              ]
+                            },
+                            "Project": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "$ref"
+                              ]
+                            },
+                            "Source": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "@OriginalSourceSystemId": {
+                                      "type": "string"
+                                    },
+                                    "@OSSDataSetName": {
+                                      "type": "string"
+                                    },
+                                    "Filed": {
+                                      "type": "array",
+                                      "items": [
+                                        {
+                                          "type": "object",
+                                          "properties": {
+                                            "@FileName": {
+                                              "type": "string"
+                                            },
+                                            "FieldName": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "required": [
+                                            "@FileName",
+                                            "FieldName"
+                                          ]
+                                        },
+                                        {
+                                          "type": "object",
+                                          "properties": {
+                                            "@FileName": {
+                                              "type": "string"
+                                            },
+                                            "FieldName": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "required": [
+                                            "@FileName",
+                                            "FieldName"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "@OriginalSourceSystemId",
+                                    "@OSSDataSetName",
+                                    "Filed"
+                                  ]
+                                }
+                              ]
+                            },
+                            "Description": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "@TargetDBId",
+                            "@SourceSystemId",
+                            "Default",
+                            "Project",
+                            "Source",
+                            "Description"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "@Name",
+                    "Sequence",
+                    "Directive",
+                    "BusinessDescription",
+                    "DataType",
+                    "Constraints",
+                    "ForeignKeyMapping",
+                    "Classification",
+                    "Mapping"
+                  ]
+                }
+              ]
             }
           },
           "required": [
             "@Name",
             "Project",
-            "Directive"
+            "Directive",
+            "LoadFrequency",
+            "BusinessDescription",
+            "Classification",
+            "AccountableParty",
+            "Field"
           ]
         }
       ]
