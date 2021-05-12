@@ -344,7 +344,7 @@
                           "type": "object",
                           "properties": {
                             "@Id": {
-                              "type": "string"
+                              "type": "integer"
                             },
                             "Name": {
                               "type": "string"
