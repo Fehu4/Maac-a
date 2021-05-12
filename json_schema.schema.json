@@ -102,7 +102,8 @@
                   "type": "object",
                   "properties": {
                     "@Type": {
-                      "type": "string"
+                      "type": "string",
+                      "enum": ["Owner", "Steward"]
                     },
                     "Name": {
                       "type": "string"
