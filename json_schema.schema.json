@@ -175,25 +175,6 @@
                     "Name",
                     "SKP"
                   ]
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "@Type": {
-                      "type": "string"
-                    },
-                    "Name": {
-                      "type": "string"
-                    },
-                    "SKP": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "@Type",
-                    "Name",
-                    "SKP"
-                  ]
                 }
               ]
             },
