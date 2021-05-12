@@ -9,7 +9,8 @@
           "type": "object",
           "properties": {
             "@Name": {
-              "type": "string"
+              "type": "string",
+              "maxLength": 30
             },
             "Project": {
               "type": "string"
