@@ -10,7 +10,9 @@
           "properties": {
             "@Name": {
               "type": "string",
-              "maxLength": 30
+              "maxLength": 30,
+              "pattern": ".*_REL$",
+              "description": "TODO: pattern" 
             },
             "Project": {
               "type": "string"
