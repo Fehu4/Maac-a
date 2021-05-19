@@ -31,7 +31,7 @@ def validate_json(json_data):
     for error in sorted(errors, key=str):
         print(error.message)
         
-    if len(errors)>0:
+    if len(list(errors))>0:
         err = "Given JSON data is InValid"
         return False, err
     else:
