@@ -9,11 +9,11 @@ def get_schema(schemaName):
         schema = json.load(file)
     return schema
 
-def get_json():
-    """This function loads json file"""
-    with open("Model/json_file.json", "r") as file:
-        json_file = json.load(file)
-    return json_file
+# def get_json():
+#     """This function loads json file"""
+#     with open("json_file.json", "r") as file:
+#         json_file = json.load(file)
+#     return json_file
     
 
 def validate_json(json_data):
@@ -37,7 +37,7 @@ def test_schema():
     is_wellformed=True
     msg=" Given JSON is well-formed"
     try:
-        with open('json_file.json', 'r') as file:
+        with open('Model/json_file.json', 'r') as file:
             json_file = json.load(file)
     except ValueError as e:
         print(e)
