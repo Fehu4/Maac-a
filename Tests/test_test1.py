@@ -38,10 +38,10 @@ def validate_json(json_data):
     if errCount > 0:
         err = "Given JSON data is InValid"
         logs_file.write(err)
-        f.close()
+        logs_file.close()
         return False, err
     else:
-        f.close()
+        logs_file.close()
         message = "Given JSON data is Valid"
         return True, message
 
