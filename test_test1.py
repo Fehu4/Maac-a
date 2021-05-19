@@ -32,32 +32,20 @@ def validate_json(json_data):
     return True, message
 
 
-# def test_if_wellFormed():
-#     is_valid=True
-#     msg=" Given JSON is well-formed"
-    
-#     try:
-#         with open('json_file.json', 'r') as file:
-#             json_file = json.load(file)
-#     except ValueError as e:
-#         is_valid=False
-#         msg="JSON not  well-formed"
-    
-#     print(msg)
-#     assert is_valid == True 
 
 def test_schema():
-    is_valid=True
+    is_wellformed=True
     msg=" Given JSON is well-formed"
     try:
         with open('json_file.json', 'r') as file:
             json_file = json.load(file)
     except ValueError as e:
-        is_valid=False
+        print(e)
+        is_wellformed=False
         msg="JSON not  well-formed"
         
     print(msg)
-    assert is_valid == True       
+    assert is_wellformed == True       
     
     # validate it
     is_valid, msg = validate_json(json_file)
