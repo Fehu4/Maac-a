@@ -46,7 +46,7 @@ def test_schema():
     try:
         with open('Model/json_file.json', 'r') as file:
             json_file = json.load(file)
-    except ValueError as e:
+    except Exception as e:
         print(e)
         is_wellformed=False
         msg="JSON not  well-formed"
