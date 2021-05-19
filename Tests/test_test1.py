@@ -25,13 +25,14 @@ def validate_json(json_data):
     # Describe what kind of json you expect.
     execute_api_schema = get_schema(json_data['SchemaName'])
 
-    
+    errCount = 0
     v = Draft3Validator(execute_api_schema)
     errors = v.iter_errors(json_data)
     for error in sorted(errors, key=str):
         print(error.message)
+        errCount += 1
         
-    if len(list(errors))>0:
+    if errCount > 0:
         err = "Given JSON data is InValid"
         return False, err
     else:
