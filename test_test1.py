@@ -11,7 +11,7 @@ def get_schema(schemaName):
 
 def get_json():
     """This function loads json file"""
-    with open("json_file.json", "r") as file:
+    with open("Model/json_file.json", "r") as file:
         json_file = json.load(file)
     return json_file
     
