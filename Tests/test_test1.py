@@ -5,7 +5,7 @@ from jsonschema import validate
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
-    with open(schemaName, "r") as file:
+    with open("Schema/" + schemaName, "r") as file:
         schema = json.load(file)
     return schema
 
