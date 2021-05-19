@@ -6,7 +6,7 @@
          "Directive":"Create",
          "LoadFrequency":[
             {
-               "@Type":"daily"
+               "@Type":"daily",
                "Execute":true
             },
             {
