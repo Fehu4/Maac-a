@@ -3,9 +3,9 @@ import jsonschema
 from jsonschema import validate
 
 
-def get_schema():
+def get_schema(schemaName):
     """This function loads the given schema available"""
-    with open("json_schema.schema.json", "r") as file:
+    with open(schemaName, "r") as file:
         schema = json.load(file)
     return schema
 
@@ -19,7 +19,7 @@ def get_json():
 def validate_json(json_data):
     """REF: https://json-schema.org/ """
     # Describe what kind of json you expect.
-    execute_api_schema = get_schema()
+    execute_api_schema = get_schema(json_data['SchemaName'])
 
     try:
         validate(instance=json_data, schema=execute_api_schema)
