@@ -1,7 +1,7 @@
 import json
 import jsonschema
 from jsonschema import validate
-
+from jsonschema import Draft3Validator
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
@@ -14,6 +14,10 @@ def get_schema(schemaName):
 #     with open("json_file.json", "r") as file:
 #         json_file = json.load(file)
 #     return json_file
+
+# def get_latest_files():
+ 
+#     return files[]
     
 
 def validate_json(json_data):
@@ -21,15 +25,18 @@ def validate_json(json_data):
     # Describe what kind of json you expect.
     execute_api_schema = get_schema(json_data['SchemaName'])
 
-    try:
-        validate(instance=json_data, schema=execute_api_schema)
-    except jsonschema.exceptions.ValidationError as err:
-        print(err)
+    
+    v = Draft3Validator(execute_api_schema)
+    errors = v.iter_errors(json_data)
+    for error in sorted(errors, key=str):
+        print(error.message)
+        
+    if len(errors)>0:
         err = "Given JSON data is InValid"
         return False, err
-
-    message = "Given JSON data is Valid"
-    return True, message
+    else:
+        message = "Given JSON data is Valid"
+        return True, message
 
 
 
