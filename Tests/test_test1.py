@@ -28,14 +28,20 @@ def validate_json(json_data):
     errCount = 0
     v = Draft3Validator(execute_api_schema)
     errors = v.iter_errors(json_data)
+
+    logs_file = open("logs/errors.txt", "a")
+
     for error in sorted(errors, key=str):
-        print(error.message)
+        logs_file.write(error.message)
         errCount += 1
         
     if errCount > 0:
         err = "Given JSON data is InValid"
+        logs_file.write(err)
+        f.close()
         return False, err
     else:
+        f.close()
         message = "Given JSON data is Valid"
         return True, message
 
@@ -47,16 +53,17 @@ def test_schema():
     try:
         with open('Model/json_file.json', 'r') as file:
             json_file = json.load(file)
+            is_valid, msg = validate_json(json_file)
+            print(msg)
     except Exception as e:
-        print(e)
+        logs_file = open("logs/errors.txt", "a")
+        logs_file.write(e)
+        logs_file.write("JSON not  well-formed")
+        logs_file.close()
         is_wellformed=False
         msg="JSON not  well-formed"
         
     print(msg)
     assert is_wellformed == True       
-    
-    # validate it
-    is_valid, msg = validate_json(json_file)
-    print(msg)
 
     assert is_valid == True 
