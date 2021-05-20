@@ -30,7 +30,7 @@
        
          "AccountableParty":[
             {
-               "@Type":"test",
+               "@Type":"Owner",
                "Name":"Michał Różalski",
                "SKP":"1223456"
             },
