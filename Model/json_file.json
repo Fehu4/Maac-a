@@ -42,7 +42,7 @@
          ],
          "Field":[
             {
-               "@Name":"WH_APPL_NO",
+               "@Name":"WH_APPL_NOO",
                "Sequence":10,
                "Directive":"Create",
                "BusinessDescription":[
