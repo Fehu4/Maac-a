@@ -68,3 +68,6 @@ def test_schema():
 
     assert is_valid == True 
 
+
+test_schema()
+
