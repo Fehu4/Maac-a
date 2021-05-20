@@ -38,4 +38,4 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           # command: pytest -s
-          command: ./commit_check.sh
+          command: ./Tests/commit_check.sh
