@@ -26,25 +26,33 @@ def validate_json(json_data):
     # Describe what kind of json you expect.
     execute_api_schema = get_schema(json_data['SchemaName'])
 
-    errCount = 0
-    v = Draft3Validator(execute_api_schema)
-    errors = v.iter_errors(json_data)
+    # errCount = 0
+    # v = Draft3Validator(execute_api_schema)
+    # errors = v.iter_errors(json_data)
 
-    logs_file = open("logs/errors.txt", "a")
+    # logs_file = open("logs/errors.txt", "a")
 
-    for error in sorted(errors, key=str):
-        logs_file.write(error.message)
-        errCount += 1
+    # for error in sorted(errors, key=str):
+    #     logs_file.write(error.message)
+    #     errCount += 1
         
-    if errCount > 0:
+    # if errCount > 0:
+    #     err = "Given JSON data is InValid"
+    #     logs_file.write(err)
+    #     logs_file.close()
+    #     return False, err
+    # else:
+    #     logs_file.close()
+    #     message = "Given JSON data is Valid"
+    #     return True, message
+    try:
+        validate(instance=json_data, schema=execute_api_schema)
+    except jsonschema.exceptions.ValidationError as err:
+        print(err)
         err = "Given JSON data is InValid"
-        logs_file.write(err)
-        logs_file.close()
         return False, err
-    else:
-        logs_file.close()
-        message = "Given JSON data is Valid"
-        return True, message
+    message = "Given JSON data is Valid"
+    return True, message
 
 
 
