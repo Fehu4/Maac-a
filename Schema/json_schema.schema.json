@@ -360,7 +360,6 @@
                     "DataType",
                     "Constraints",
                     "ForeignKeyMapping",
-                    "Classification",
                     "Mapping"
                   ]
                 }
@@ -373,7 +372,6 @@
             "Directive",
             "LoadFrequency",
             "BusinessDescription",
-            "Classification",
             "AccountableParty",
             "Field"
           ]
