@@ -351,30 +351,11 @@
                         }
                       ]
                     }
-                  },
-                  "required": [
-                    "@Name",
-                    "Sequence",
-                    "Directive",
-                    "BusinessDescription",
-                    "DataType",
-                    "Constraints",
-                    "ForeignKeyMapping",
-                    "Mapping"
-                  ]
+                  }
                 }
               ]
             }
-          },
-          "required": [
-            "@Name",
-            "Project",
-            "Directive",
-            "LoadFrequency",
-            "BusinessDescription",
-            "AccountableParty",
-            "Field"
-          ]
+          }
         }
       ]
     }
