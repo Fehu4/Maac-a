@@ -38,4 +38,4 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           # command: pytest -s
-          command: .circleci/commit_check.sh
+          command: ./commit_check.sh
