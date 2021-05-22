@@ -46,7 +46,7 @@ def test_schema(filepath):
     is_wellformed=True
 
 
-    f = open("errors.txt", "a")
+    f = open("Errors/errors.txt", "a")
     f.write("Processing " + filepath + "\n")
 
 
