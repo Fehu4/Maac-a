@@ -39,20 +39,7 @@ jobs:
           # This assumes pytest is installed via the install-package step above
           # command: pytest -s
           command: ./Tests/commit_check.sh
-          
-      - run:
-          name: Creating Dummy Artifacts
-          command: |
-            echo "my artifact file" > /tmp/artifact-1.txt;
-            mkdir /tmp/artifacts;
-            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
 
       - store_artifacts:
-          path: /tmp/artifact-1
-          destination: artifact-file
-
-      - store_artifacts:
-          path: /tmp/artifacts
-
-      - store_artifacts:
+          name: Log errors into file
           path: demofile2.txt

@@ -21,7 +21,7 @@ def get_schema(schemaName):
 #     return files[]
     
 
-def validate_json(json_data):
+def validate_json(json_data, f):
     """REF: https://json-schema.org/ """
     # Describe what kind of json you expect.
     execute_api_schema = get_schema(json_data['SchemaName'])
@@ -31,6 +31,7 @@ def validate_json(json_data):
     errors = v.iter_errors(json_data)
     for error in sorted(errors, key=str):
         print(error.message)
+        f.write(error.message)
         errCount += 1
         
     if errCount > 0:
@@ -43,27 +44,29 @@ def validate_json(json_data):
 
 def test_schema(filepath):
     is_wellformed=True
-    msg=filepath +  "is well-formed"
 
-    f = open("demofile2.txt", "a")
+
+    f = open("errors.txt", "a")
     f.write("Now the file has more content!")
-    f.close()
+
 
     try:
         with open(filepath, 'r') as file:
             json_file = json.load(file)
-            is_valid, msg = validate_json(json_file)
+            is_valid, msg = validate_json(json_file,f)
             print(msg)
+            f.write(msg)
     except Exception as e:
         print(e)
         is_wellformed=False
         msg=filepath + " not  well-formed"
         print(msg)
+        f.write(msg)
 
     assert is_wellformed == True       
 
     assert is_valid == True 
-
+    f.close()
 
 test_schema(sys.argv[1])
 
