@@ -43,7 +43,7 @@ def validate_json(json_data):
 
 def test_schema(filepath):
     is_wellformed=True
-    msg=" Given JSON is well-formed"
+    msg=filepath +  "is well-formed"
     try:
         with open(filepath, 'r') as file:
             json_file = json.load(file)
@@ -53,8 +53,8 @@ def test_schema(filepath):
         print(e)
         is_wellformed=False
         msg=filepath + " not  well-formed"
-        
-    print(msg)
+        print(msg)
+
     assert is_wellformed == True       
 
     assert is_valid == True 
