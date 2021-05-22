@@ -7,7 +7,7 @@
          "Directive":"Create",
          "LoadFrequency":[
             {
-               "@Type":"daily",
+               "@Type":"dailgnngy",
                "Execute":true
             },
             {
@@ -30,7 +30,7 @@
        
          "AccountableParty":[
             {
-               "@Type":"Owner",
+               "@Type":"Ongnwner",
                "Name":"Michał Różalski",
                "SKP":"1223456"
             },
@@ -75,20 +75,7 @@
                      }
                   ]
                },
-               "Classification":[
-                  {
-                     "@Id":1234,
-                     "Name":"Obszar biznesowy",
-                     "Key":"2021:1.2.3.4",
-                     "Value":"Klient indywidualny"
-                  },
-                  {
-                     "@Id":324,
-                     "Name":"Ontologia Danych",
-                     "Key":"2021:3.23.4",
-                     "Value":"Osoby"
-                  }
-               ],
+
                "Mapping":[
                   {
                      "@TargetDBId":"DDHDD08P",
