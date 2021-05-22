@@ -45,7 +45,7 @@ jobs:
 
       - store_artifacts:
           name: Log errors into file
-          path: ./Errors/errors.txt
+          path: ./errors.txt
 
       - run:
           name: Commit to GitHub
