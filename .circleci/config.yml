@@ -42,4 +42,4 @@ jobs:
 
       - store_artifacts:
           name: Log errors into file
-          path: demofile2.txt
+          path: errors.txt
