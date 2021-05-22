@@ -7,7 +7,7 @@
          "Directive":"Create",
          "LoadFrequency":[
             {
-               "@Type":"dailgnngy",
+               "@Type":"daily",
                "Execute":true
             },
             {
@@ -18,7 +18,7 @@
          "BusinessDescription":[
             {
                "@Lang":"PL",
-               "Name":"HURTOWNIANY IDENTYFIKATOR WNIOSKUUU",
+               "Name":"HURTOWNIANY IDENTYFIKATOR WNIOSKUUUU",
                "Definition":"TABELA POWIĄZAŃ ŁĄCZĄCA WNIOSKI (APLIKACJE) Z KARTĄ PŁĄTNICZĄ. TABELA ZAWIERA HISTORIĘ ZMIAN - NIE MA ODRĘBNEJ TABELI HISTORYCZNEJ"
             },
             {
@@ -27,10 +27,10 @@
                "Definition":"THIS IS APPLICATION CARD LINKAGE TABLE.TABLE CONTAINING HISTORY OF CHANGES - LACK OF HISTORICAL TABLE"
             }
          ],
-       
+
          "AccountableParty":[
             {
-               "@Type":"Ongnwner",
+               "@Type":"Owner",
                "Name":"Michał Różalski",
                "SKP":"1223456"
             },
@@ -58,7 +58,7 @@
                   }
                ],
                "DataType":"integer",
-             
+
                "ForeignKeyMapping":{
                   "Directive":"Create",
                   "hasForigenKey":true,
@@ -75,7 +75,20 @@
                      }
                   ]
                },
-
+               "Classification":[
+                  {
+                     "@Id":1234,
+                     "Name":"Obszar biznesowy",
+                     "Key":"2021:1.2.3.4",
+                     "Value":"Klient indywidualny"
+                  },
+                  {
+                     "@Id":324,
+                     "Name":"Ontologia Danych",
+                     "Key":"2021:3.23.4",
+                     "Value":"Osoby"
+                  }
+               ],
                "Mapping":[
                   {
                      "@TargetDBId":"DDHDD08P",
