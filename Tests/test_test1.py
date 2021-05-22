@@ -44,6 +44,11 @@ def validate_json(json_data):
 def test_schema(filepath):
     is_wellformed=True
     msg=filepath +  "is well-formed"
+
+    f = open("demofile2.txt", "a")
+    f.write("Now the file has more content!")
+    f.close()
+
     try:
         with open(filepath, 'r') as file:
             json_file = json.load(file)
