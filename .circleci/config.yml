@@ -47,10 +47,11 @@ jobs:
           name: Log errors into file
           path: errors.txt
 
-      name: Commit to GitHub
-        command: |
-          git config user.email "areoflo@gmail.com"
-          git config user.name "CircleCI Job"
-          git checkout master
-          git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
-          git push origin master
+      - run:
+          name: Commit to GitHub
+          command: |
+            git config user.email "areoflo@gmail.com"
+            git config user.name "CircleCI Job"
+            git checkout master
+            git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
+            git push origin master
