@@ -30,6 +30,9 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "1d:40:da:e4:2c:2d:63:4b:e3:5c:7d:d3:bf:b4:a4:e7"
       - python/install-packages:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
@@ -43,3 +46,11 @@ jobs:
       - store_artifacts:
           name: Log errors into file
           path: errors.txt
+
+      name: Commit to GitHub
+        command: |
+          git config user.email "areoflo@gmail.com"
+          git config user.name "CircleCI Job"
+          git checkout master
+          git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
+          git push origin master
