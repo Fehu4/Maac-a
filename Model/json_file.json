@@ -113,7 +113,7 @@
                      "@SourceSystemId":5118,
                      "Default":{
                         "NOT NULL":true,
-                        "Description":"Brak wartości niedopuszczal"
+                        "Description":"Brak wartości niedopuszcza"
                      },
                      "Project":{
                         "$ref":"#/Table/Project"
