@@ -25,15 +25,20 @@ def validate_json(json_data):
     """REF: https://json-schema.org/ """
     # Describe what kind of json you expect.
     execute_api_schema = get_schema(json_data['SchemaName'])
-    try:
-        validate(instance=json_data, schema=execute_api_schema)
-    except jsonschema.exceptions.ValidationError as err:
-        print(err)
+    
+    errCount = 0
+    v = Draft3Validator(execute_api_schema)
+    errors = v.iter_errors(json_data)
+    for error in sorted(errors, key=str):
+        print(error.message)
+        errCount += 1
+        
+    if errCount > 0:
         err = "Given JSON data is InValid"
         return False, err
-    message = "Given JSON data is Valid"
-    return True, message
-
+    else:
+        message = "Given JSON data is Valid"
+        return True, message
 
 
 def test_schema(filepath):
@@ -45,8 +50,9 @@ def test_schema(filepath):
             is_valid, msg = validate_json(json_file)
             print(msg)
     except Exception as e:
+        print(e)
         is_wellformed=False
-        msg="JSON not  well-formed"
+        msg=filepath + " not  well-formed"
         
     print(msg)
     assert is_wellformed == True       
