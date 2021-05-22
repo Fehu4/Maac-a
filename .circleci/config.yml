@@ -51,7 +51,7 @@ jobs:
           name: Commit to GitHub
           command: |
             git config user.email "areoflo@gmail.com"
-            git config user.name "CircleCI Job"
+            git config user.name "Fehu4"
             git checkout circleci-project-setup
             git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
             git push origin circleci-project-setup
