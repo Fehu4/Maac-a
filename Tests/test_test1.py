@@ -31,7 +31,7 @@ def validate_json(json_data, f):
     errors = v.iter_errors(json_data)
     for error in sorted(errors, key=str):
         print(error.message)
-        f.write(error.message)
+        f.write(error.message+ "\n")
         errCount += 1
         
     if errCount > 0:
@@ -47,7 +47,7 @@ def test_schema(filepath):
 
 
     f = open("errors.txt", "a")
-    f.write("Now the file has more content!")
+    f.write("Processing " + filepath + "\n")
 
 
     try:
@@ -55,13 +55,13 @@ def test_schema(filepath):
             json_file = json.load(file)
             is_valid, msg = validate_json(json_file,f)
             print(msg)
-            f.write(msg)
+            f.write(msg + "\n")
     except Exception as e:
         print(e)
         is_wellformed=False
         msg=filepath + " not  well-formed"
         print(msg)
-        f.write(msg)
+        f.write(msg + "\n")
 
     assert is_wellformed == True       
 
