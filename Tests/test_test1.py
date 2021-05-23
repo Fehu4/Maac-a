@@ -73,7 +73,7 @@ def test_schema(filepath):
             is_valid, msg = validate_json(json_file,f)
             print(msg)
             f.write(msg + "\n")
-            create_documentation(file)
+
     except Exception as e:
         print(e)
         is_wellformed=False
@@ -81,6 +81,7 @@ def test_schema(filepath):
         print(msg)
         f.write(msg + "\n")
 
+    create_documentation(json_file)
     assert is_wellformed == True       
 
     assert is_valid == True 
