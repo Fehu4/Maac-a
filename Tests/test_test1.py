@@ -52,7 +52,7 @@ def create_documentation(file):
           </head>
              Dokumentacja
    
-            <body>""" + file + """</body>
+            <body>""" + json.dumps(file) + """</body>
         </html>
             """
 
