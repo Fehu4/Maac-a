@@ -3,7 +3,7 @@ import json
 import jsonschema
 from jsonschema import validate
 from jsonschema import Draft3Validator
-from weasyprint import HTML, CSS
+
 def get_schema(schemaName):
     """This function loads the given schema available"""
     with open("Schema/" + schemaName, "r") as file:
@@ -51,11 +51,13 @@ def create_documentation(file):
               </head>
                  Dokumentacja
 
-                <body>""" + json.dumps(file) + """</body>
+                <body>""" + json.dump(file) + """</body>
             </html>
                 """
 
-    HTML(string=body).write_pdf('dokumentacja.pdf')
+    f = open("dokumentacja.html", "a")
+    f.write(body + "\n")
+    f.close()
 
 
 def test_schema(filepath):
