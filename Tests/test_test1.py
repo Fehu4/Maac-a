@@ -3,6 +3,7 @@ import json
 import jsonschema
 from jsonschema import validate
 from jsonschema import Draft3Validator
+import pdfkit
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
@@ -42,6 +43,22 @@ def validate_json(json_data, f):
         return True, message
 
 
+def create_documentation(file):
+    body = """
+        <html>
+          <head>
+            <meta name="pdfkit-page-size" content="Legal"/>
+            <meta name="pdfkit-orientation" content="Landscape"/>
+          </head>
+             Dokumentacja
+   
+            <body>""" + file + """</body>
+        </html>
+            """
+
+    pdfkit.from_string(body, 'dokumentacja.pdf')  # with --page-size=Legal and --orientation=Landscape
+
+
 def test_schema(filepath):
     is_wellformed=True
 
@@ -56,6 +73,7 @@ def test_schema(filepath):
             is_valid, msg = validate_json(json_file,f)
             print(msg)
             f.write(msg + "\n")
+            create_documentation(file)
     except Exception as e:
         print(e)
         is_wellformed=False

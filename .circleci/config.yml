@@ -55,5 +55,6 @@ jobs:
             git config user.name "Fehu4"
             git checkout circleci-project-setup
             git add "errors.txt"
+            git add "dokumentacja.pdf"
             git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
             git push origin circleci-project-setup
