@@ -45,11 +45,12 @@ jobs:
 
       - store_artifacts:
           name: Log errors into file
-          path: ./errors.txt
+          path: errors.txt
 
       - run:
           name: Commit to GitHub
           command: |
+            ls
             git config user.email "areoflo@gmail.com"
             git config user.name "Fehu4"
             git checkout circleci-project-setup
