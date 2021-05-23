@@ -3,8 +3,8 @@ import json
 import jsonschema
 from jsonschema import validate
 from jsonschema import Draft3Validator
-import pdfkit
-
+from reportlab.pdfgen.canvas import Canvas
+from reportlab.lib.pagesizes import A4
 def get_schema(schemaName):
     """This function loads the given schema available"""
     with open("Schema/" + schemaName, "r") as file:
@@ -44,19 +44,9 @@ def validate_json(json_data, f):
 
 
 def create_documentation(file):
-    body = """
-        <html>
-          <head>
-            <meta name="pdfkit-page-size" content="Legal"/>
-            <meta name="pdfkit-orientation" content="Landscape"/>
-          </head>
-             Dokumentacja
-   
-            <body>""" + json.dumps(file) + """</body>
-        </html>
-            """
-
-    pdfkit.from_string(body, 'dokumentacja.pdf')  # with --page-size=Legal and --orientation=Landscape
+    canvas = Canvas("dokumentacja.pdf", pagesize=A4)
+    canvas.drawString(72, 72, json.dumps(file))
+    canvas.save()
 
 
 def test_schema(filepath):
