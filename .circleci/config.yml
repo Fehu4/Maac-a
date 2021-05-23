@@ -40,9 +40,7 @@ jobs:
 
       - run:
           command: |
-            wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
-            ls
-            sudo apt install wkhtmltox_0.12.6-1.bionic_amd64.deb
+            sudo apt-get install wkhtmltopdf
 
       - run:
           name: Run tests
