@@ -40,7 +40,10 @@ jobs:
 
       - run:
           command:
-            sudo apt install https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
+            wget http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+            tar xvf wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+            sudo mv wkhtmltox/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
+            sudo chmod +x /usr/local/bin/wkhtmltopdf
 
       - run:
           name: Run tests
