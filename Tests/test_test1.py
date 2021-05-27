@@ -92,6 +92,6 @@ def check_schema(filepath):
 def test_test():
     files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
     for file in files.split(" "):
-        print(file)
+        check_schema(file)
 
 
