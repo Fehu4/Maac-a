@@ -1,0 +1,1 @@
+Tu będzie model rozumiany jako pliki opisujące aktualne tabele hurtowni
