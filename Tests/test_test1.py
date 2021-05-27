@@ -61,7 +61,7 @@ def create_documentation(file):
     f.close()
 
 
-def wip_test_schema(filepath):
+def check_schema(filepath):
     is_wellformed=True
 
 
@@ -90,7 +90,8 @@ def wip_test_schema(filepath):
     f.close()
 
 def test_test():
-    print(subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD'))
+    files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
+    for file in files:
+        check_schema(file)
 
-# test_schema(sys.argv[1])
 
