@@ -3,6 +3,7 @@ import json
 import jsonschema
 from jsonschema import validate
 from jsonschema import Draft3Validator
+import subprocess
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
@@ -60,7 +61,7 @@ def create_documentation(file):
     f.close()
 
 
-def test_schema(filepath):
+def wip_test_schema(filepath):
     is_wellformed=True
 
 
@@ -88,5 +89,8 @@ def test_schema(filepath):
     assert is_valid == True 
     f.close()
 
-test_schema(sys.argv[1])
+def test_test():
+    subprocess.check_output('git diff-tree --no-commit-id --name-only -r HEAD')
+
+# test_schema(sys.argv[1])
 
