@@ -90,7 +90,7 @@ def wip_test_schema(filepath):
     f.close()
 
 def test_test():
-    subprocess.check_output('git diff-tree --no-commit-id --name-only -r HEAD')
+    subprocess.check_output(['git diff-tree --no-commit-id --name-only -r HEAD'])
 
 # test_schema(sys.argv[1])
 
