@@ -83,7 +83,7 @@
                   "ForeignKey":[
                      {
                         "@Name":"baza.tabela.pole",
-                        "LocalKeyCount":"1",
+                        "LocalKeyCount":"2",
                         "ForeignKeyCount":"many"
                      },
                      {
