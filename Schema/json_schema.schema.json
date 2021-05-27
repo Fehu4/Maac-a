@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "titile": "EDW model change",
+  "title": "EDW model change",
   "properties": {
     "SchemaName": {
       "type": "string"
@@ -20,11 +20,11 @@
               "description": "TODO: pattern" 
             },
             "Project": {
-              "title": "Numer projektu",
+              "description": "Numer projektu",
               "type": "string"
             },
             "Directive": {
-              "title": "Change directive",
+              "description": "Change directive",
               "type": "string",
               "enum": ["Create", "Alter", "Delete", "Leave"]
             },
