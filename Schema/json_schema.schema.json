@@ -1,11 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "titile": "EDW model change",
   "properties": {
     "SchemaName": {
       "type": "string"
     },
     "Table": {
+      "description": "Table name",
       "type": "array",
       "items": [
         {
@@ -18,9 +20,11 @@
               "description": "TODO: pattern" 
             },
             "Project": {
+              "title": "Numer projektu",
               "type": "string"
             },
             "Directive": {
+              "title": "Change directive",
               "type": "string",
               "enum": ["Create", "Alter", "Delete", "Leave"]
             },
@@ -230,6 +234,7 @@
                       ]
                     },
                     "Classification": {
+                      "description": "Classifications and taxonomies",
                       "type": "array",
                       "items": [
                         {
@@ -258,6 +263,7 @@
                       ]
                     },
                     "Mapping": {
+                      "description": "Mappin details"
                       "type": "array",
                       "items": [
                         {
