@@ -1,6 +1,6 @@
 {
    "SchemaName" : "json_schema.schema.json",
-   "Table":[
+   "Table_":[
       {
          "@Name":"APPLICATION_CARD_REL",
          "Project":"PW123456",
