@@ -62,12 +62,11 @@ def create_documentation(file):
 
 
 def check_schema(filepath):
-    is_wellformed=True
-
+    is_wellformed = True
+    is_valid = False
 
     f = open("errors.txt", "a")
     f.write("Processing " + filepath + "\n")
-
 
     try:
         with open(filepath, 'r') as file:
@@ -75,17 +74,15 @@ def check_schema(filepath):
             is_valid, msg = validate_json(json_file,f)
             print(msg)
             f.write(msg + "\n")
-
+            create_documentation(json_file)
     except Exception as e:
         print(e)
         is_wellformed=False
         msg=filepath + " not  well-formed"
         print(msg)
         f.write(msg + "\n")
-
-    create_documentation(json_file)
+    
     assert is_wellformed == True       
-
     assert is_valid == True 
     f.close()
 
