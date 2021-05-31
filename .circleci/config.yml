@@ -1,7 +1,5 @@
 version: 2.1
 
-setup: true
-
 parameters:
   test-zdm:
     type: boolean
@@ -13,16 +11,8 @@ orbs:
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.2
-  path-filtering: circleci/path-filtering@0.0.1
 
 workflows:
-  setup-workflow:
-    jobs:
-      - path-filtering/filter:
-          mapping: |
-            Projects/.* test-zdm true
-          base-revision: origin/circleci-project-setup
-  
   main_test: 
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
     when: << pipeline.parameters.test-zdm >>
@@ -30,12 +20,9 @@ workflows:
       - build-and-test
 
 jobs:
-  build-and-test: # This is the name of the job, feel free to change it to better match what you're trying to do!
+  build-and-test:
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
-    # You can specify an image from Dockerhub or use one of the convenience images from CircleCI's Developer Hub
     # A list of available CircleCI Docker convenience images are available here: https://circleci.com/developer/images/image/cimg/python
-    # The executor is the environment in which the steps below will be executed - below will use a python 3.9 container
-    # Change the version below to your required version of python
     docker:
       - image: cimg/python:3.8
     # Checkout the code as the first step. This is a dedicated CircleCI step.
