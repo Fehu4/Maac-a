@@ -4,6 +4,7 @@ import jsonschema
 from jsonschema import validate
 from jsonschema import Draft3Validator
 import subprocess
+from datetime import datetime
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
@@ -65,8 +66,10 @@ def check_schema(filepath):
     is_wellformed = True
     is_valid = False
 
+    dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    
     f = open("errors.txt", "a")
-    f.write("Processing " + filepath + "\n")
+    f.write(dateLog + " processing " + filepath + "\n")
 
     try:
         with open(filepath, 'r') as file:
