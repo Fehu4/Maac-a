@@ -89,6 +89,7 @@ def check_schema(filepath):
 def test_test():
     files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
     for file in files.split(" "):
-        check_schema(file)
+        if (file.endswith('.json')):
+            check_schema(file)
 
 
