@@ -14,3 +14,5 @@ Processing Projects/json_file.json
 Projects/json_file.json not  well-formed
 31/05/2021 17:32:55 processing Projects/json_file.json
 Projects/json_file.json not  well-formed
+31/05/2021 17:35:45 processing Projects/file2.json
+Projects/file2.json not  well-formed
