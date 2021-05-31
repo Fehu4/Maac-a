@@ -1,16 +1,31 @@
 version: 2.1
 
+setup: true
+
+parameters:
+  test-zdm:
+    type: boolean
+    default: false
+
 orbs:
   # The python orb contains a set of prepackaged CircleCI configuration you can use repeatedly in your configuration files
   # Orb commands and jobs help you with common scripting around a language/tool
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.2
+  path-filtering: circleci/path-filtering@0.0.1
 
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
-    # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
+  setup-workflow:
+    jobs:
+      - path-filtering/filter:
+          mapping: |
+            Projects/.* test-zdm true
+          base-revision: origin/circleci-project-setup
+  
+  main_test: 
+  # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
+    when: << pipeline.parameters.test-zdm >>
     jobs:
       - build-and-test
 
