@@ -10,3 +10,5 @@ Processing Model/json_file.json
 Given JSON data is Valid
 Processing Model/json_file.json
 Given JSON data is Valid
+Processing Projects/json_file.json
+Projects/json_file.json not  well-formed
