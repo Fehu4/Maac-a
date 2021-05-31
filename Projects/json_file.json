@@ -29,7 +29,7 @@
          ],
          "Classification":[
             {
-               "@Id":12345,
+               "@Id":1234,
                "Name":"Obszar biznesowy",
                "Key":"2021:1.2.3.4",
                "Value":"Klient indywidualny"
