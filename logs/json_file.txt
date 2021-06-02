@@ -68,3 +68,12 @@ Element Table @Na@NameAPPLICATION_CARD_RELnie znajduje się w słowniku
 Element Field @NameWH_APPL_NOHOHOHOHOHnie znajduje się w słowniku
 Element Field @FileNameWH_APPL_NOnie znajduje się w słowniku
 Element Field @FileNameWH_APPL_NOOnie znajduje się w słowniku
+02/06/2021 22:36:58 processing Projects/json_file.json
+Given JSON data is InValid
+'1234' is not of type 'integer'
+'Createg' is not one of ['Create', 'Alter', 'Delete', 'Leave']
+'Ownerggg' is not one of ['Owner', 'Steward']
+
+Element Table @Na@NameAPPLICATION_CARD_REL: CARD REL  nie znajduje się w słowniku
+Element Field @NameWH_APPL_NOHOHOHOHOH: NOHOHOHOHOH nie znajduje się w słowniku
+Element Field @FileName WH_APPL_NOO: NOO  nie znajduje się w słowniku
