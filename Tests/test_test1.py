@@ -92,7 +92,7 @@ def check_existance(acr_file_json,value_to_check):
     for abb in splitted:
         if abb not in json.dumps(acr_file_json):
             return False
-    return False
+    return True
 
 
 def check_acronyms(acronyms_file,json_data):
