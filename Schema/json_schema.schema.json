@@ -263,7 +263,7 @@
                       ]
                     },
                     "Mapping": {
-                      "description": "Mappin details"
+                      "description": "Mappin details",
                       "type": "array",
                       "items": [
                         {
