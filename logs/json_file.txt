@@ -12,3 +12,9 @@ Given JSON data is InValid
 
 02/06/2021 19:05:21 processing Projects/json_file.json
 02/06/2021 19:11:55 processing Projects/json_file.json
+02/06/2021 19:21:29 processing Projects/json_file.json
+Given JSON data is InValid
+'1235' is not of type 'integer'
+'Creategg' is not one of ['Create', 'Alter', 'Delete', 'Leave']
+'Ownerggg' is not one of ['Owner', 'Steward']
+
