@@ -34,7 +34,7 @@ def validate_json(json_data, f):
     error_text=''
     for error in sorted(errors, key=str):
         print(error.message)
-        error_text += error.message
+        error_text += error.message + "\n"
         errCount += 1
         
     if errCount > 0:
@@ -58,10 +58,14 @@ def create_documentation(file):
             </html>
                 """
 
-    f = open("dokumentacja.html", "a")
+    f = open("Model/Documentation/dokumentacja.html", "w")
     f.write(body + "\n")
     f.close()
 
+def extract_filename(filepath):
+    splitted=filepath.split("/")
+
+    return splitted[-1].replace('.json','')
 
 def check_schema(filepath):
     is_wellformed = True
@@ -69,7 +73,7 @@ def check_schema(filepath):
 
     dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
-    f = open("errors.txt", "a")
+    f = open("logs/"+extract_filename+".txt", "a")
     f.write(dateLog + " processing " + filepath + "\n")
 
     try:
@@ -85,10 +89,11 @@ def check_schema(filepath):
         msg=filepath + " not  well-formed"
         print(msg)
         f.write(msg + "\n" + e + "\n")
-    
+
+    f.close()
     assert is_wellformed == True       
     assert is_valid == True 
-    f.close()
+
 
 def test_test():
     files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
