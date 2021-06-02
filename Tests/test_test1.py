@@ -109,11 +109,15 @@ def check_acronyms(acronyms_file,json_data):
         for tableField in TableFields:
             if not check_existance(acr_file_json, tableField['@Name']):
                 errors += "Element Field @Name"+ tableField['@Name'] + "nie znajduje się w słowniku" + '\n'
-            MappingSourceFields = tableField['Mapping']['Source']['Filed']
-            for MappingSourceField in MappingSourceFields:
-                if not check_existance(acr_file_json, MappingSourceField['@FileName']):
-                    errors += "Element Field @FileName" + MappingSourceField['@FileName'] \
-                              + "nie znajduje się w słowniku" + '\n'
+            Mappings = tableField['Mapping']
+            for mapping in Mappings:
+                MappingSources = mapping['Source']
+                for MappingSource in MappingSources:
+                    MappingSourceFields = MappingSource['Filed']
+                    for MappingSourceField in MappingSourceFields:
+                        if not check_existance(acr_file_json, MappingSourceField['@FileName']):
+                            errors += "Element Field @FileName" + MappingSourceField['@FileName']\
+                                    + "nie znajduje się w słowniku" + '\n'
 
     return errors
 
