@@ -5,7 +5,7 @@ from jsonschema import validate
 from jsonschema import Draft3Validator
 import subprocess
 from datetime import datetime
-import cStringIO
+from io import StringIO
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
@@ -33,7 +33,7 @@ def get_error_line(e, json_object):
     orig, ob_tmp[e.path[-1]] = ob_tmp[e.path[-1]], marker
 
     json_error = json.dumps(json_object, indent=4)
-    io = cStringIO.StringIO(json_error)
+    io = StringIO(json_error)
     errline = None
 
     for lineno, text in enumerate(io):
