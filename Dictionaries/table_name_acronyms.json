@@ -1,8 +1,31 @@
 {
-	"long":"ACCOUNT",
-	"short":"ACC"
-},
-{
-	"long":"WAREHOUSE",
-	"short":"WH"
-},
+    "dictionary_items": [{
+            "long": "ACCOUNT",
+            "short": "ACC"
+        },
+        {
+            "long": "WAREHOUSE",
+            "short": "WH"
+        },
+        {
+            "long": "APPLICATION",
+            "short": "APPL"
+        },
+        {
+            "long": "NO",
+            "short": "NO"
+        },
+        {
+            "long": "ID",
+            "short": "IDENTIFIER"
+        },
+        {
+            "long": "SOURCE",
+            "short": "SRCE"
+        },
+        {
+            "long": "SYSTEM",
+            "short": "SYYS"
+        }
+    ]
+}
