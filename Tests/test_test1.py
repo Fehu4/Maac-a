@@ -33,8 +33,8 @@ def validate_json(json_data, f):
     errors = v.iter_errors(json_data)
     error_text=''
     for error in sorted(errors, key=str):
-        print(error.path + " --- " + error.absolute_path + " --- " + error.message)
-        error_text += error.path + " --- " + error.absolute_path + " --- " + error.message + "\n"
+        print(''.join(error.path) + " --- " + ''.join(error.absolute_path) + " --- " + error.message)
+        error_text += ''.join(error.path) + " --- " + ''.join(error.absolute_path) + " --- " + error.message + "\n"
         errCount += 1
         
     if errCount > 0:
