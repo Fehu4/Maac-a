@@ -32,7 +32,7 @@ def get_error_line(e, json_object):
 
     orig, ob_tmp[e.path[-1]] = ob_tmp[e.path[-1]], marker
 
-    json_error = json.dumps(json_object, indent=4)
+    json_error = json.dumps(json_object)
     io = StringIO(json_error)
     errline = None
 
@@ -40,7 +40,7 @@ def get_error_line(e, json_object):
             if marker in text:
                 errline = lineno
                 break
-    return errline
+    return errline+1
 
 def validate_json(json_data, f):
     """REF: https://json-schema.org/ """
