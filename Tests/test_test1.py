@@ -5,6 +5,7 @@ from jsonschema import validate
 from jsonschema import Draft3Validator
 import subprocess
 from datetime import datetime
+import cStringIO
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
@@ -21,7 +22,25 @@ def get_schema(schemaName):
 # def get_latest_files():
  
 #     return files[]
-    
+
+def get_error_line(e, json_object):  
+    marker = "3fb539deef7c4e2991f265c0a982f5ea"
+
+    ob_tmp = json_object
+    for entry in list(e.path)[:-1]:
+        ob_tmp = ob_tmp[entry]
+
+    orig, ob_tmp[e.path[-1]] = ob_tmp[e.path[-1]], marker
+
+    json_error = json.dumps(json_object, indent=4)
+    io = cStringIO.StringIO(json_error)
+    errline = None
+
+    for lineno, text in enumerate(io):
+            if marker in text:
+                errline = lineno
+                break
+    return errline
 
 def validate_json(json_data, f):
     """REF: https://json-schema.org/ """
@@ -33,7 +52,7 @@ def validate_json(json_data, f):
     errors = v.iter_errors(json_data)
     error_text=''
     for error in sorted(errors, key=str):
-        print(error.message)
+        print("Line " +get_error_line(error, json_data) + " --- " + error.message)
         error_text += error.message + "\n"
         errCount += 1
         
