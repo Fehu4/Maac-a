@@ -86,6 +86,34 @@ def extract_filename(filepath):
 
     return splitted[-1].replace('.json','')
 
+##TO Do ładniejsze sprawdzanie
+def check_existance(acr_file_json,value_to_check):
+    splitted=value_to_check.split("_")
+
+    for abb in splitted:
+        if abb not in json.dumps(acr_file_json):
+            return False
+    return False
+
+
+def check_acronyms(acronyms_file,json_data):
+    with open(acronyms_file, "r") as file:
+        acr_file_json = json.load(file)
+
+    errors=''
+    jsonTables=json_data['Table']
+
+    for table in jsonTables:
+        if not check_existance(acr_file_json,table['@Name']):
+            errors+="Element Table @Name nie znajduje się w słowniku" + '\n'
+        TableFields=table['Field']
+        for tableField in TableFields:
+            if not check_existance(acr_file_json, tableField['@Name']):
+                errors += "Element Field @Name nie znajduje się w słowniku" + '\n'
+
+    return errors
+
+
 def check_schema(filepath):
     is_wellformed = True
     is_valid = False
@@ -109,6 +137,8 @@ def check_schema(filepath):
         print(msg)
         f.write(msg + "\n" + e + "\n")
 
+    msg= check_acronyms("Dictionaries/table_name_acronyms.json",json_file)
+    f.write(msg + "\n")
     f.close()
     assert is_wellformed == True       
     assert is_valid == True 
