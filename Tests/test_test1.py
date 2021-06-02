@@ -91,7 +91,11 @@ def check_existance(acr_file_json,value_to_check):
 
     msg=''
     for abb in splitted:
-        if abb not in json.dumps(acr_file_json):
+        exist_in_dict=False
+        for item in acr_file_json['dictionary_items']:
+            if item['short']==abb:
+                exist_in_dict=True
+        if exist_in_dict != True:
             msg+=abb + " "
     if len(msg)>0:
         return False,msg
@@ -109,12 +113,12 @@ def check_acronyms(acronyms_file,json_data):
     for table in jsonTables:
         instance_exist, msg=check_existance(acr_file_json,table['@Name'])
         if  not instance_exist:
-            errors+="Element Table @Na@Name"+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
+            errors+="Element Table @Na@Name "+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
         TableFields=table['Field']
         for tableField in TableFields:
             instance_exist, msg = check_existance(acr_file_json, tableField['@Name'])
             if not instance_exist:
-                errors += "Element Field @Name"+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
+                errors += "Element Field @Name "+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
             Mappings = tableField['Mapping']
             for mapping in Mappings:
                 MappingSources = mapping['Source']
