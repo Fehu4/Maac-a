@@ -4,14 +4,14 @@
       {
          "@Name":"APPLICATION_CARD_REL",
          "Project":"PW123456",
-         "Directive":"Create",
+         "Directive":"Createggg",
          "LoadFrequency":[
             {
                "@Type":"daily",
                "Execute":true
             },
             {
-               "@Type":"monthly",
+               "@Type":"monthlyyyy",
                "Execute":false
             }
          ],
@@ -43,7 +43,7 @@
          ],
          "AccountableParty":[
             {
-               "@Type":"Owner",
+               "@Type":"Ownerggg",
                "Name":"Michał Różalski",
                "SKP":"1223456"
             },
