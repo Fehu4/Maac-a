@@ -4,7 +4,7 @@
       {
          "@Name":"APPLICATION_CARD_REL",
          "Project":"PW123456",
-         "Directive":"Creatego",
+         "Directive":"Createg",
          "LoadFrequency":[
             {
                "@Type":"daily",
