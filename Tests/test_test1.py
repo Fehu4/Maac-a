@@ -73,7 +73,7 @@ def check_schema(filepath):
 
     dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
-    f = open("logs/"+extract_filename+".txt", "a")
+    f = open("logs/"+extract_filename(filepath)+".txt", "a")
     f.write(dateLog + " processing " + filepath + "\n")
 
     try:
