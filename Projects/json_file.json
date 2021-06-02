@@ -11,7 +11,7 @@
                "Execute":true
             },
             {
-               "@Type":"monthlyyy",
+               "@Type":"monthlyy",
                "Execute":false
             }
          ],
