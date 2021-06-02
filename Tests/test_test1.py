@@ -89,10 +89,14 @@ def extract_filename(filepath):
 def check_existance(acr_file_json,value_to_check):
     splitted=value_to_check.split("_")
 
+    msg=''
     for abb in splitted:
         if abb not in json.dumps(acr_file_json):
-            return False
-    return True
+            msg+=abb + " "
+    if len(msg)>0:
+        return False,msg
+    else:
+        return True,msg
 
 
 def check_acronyms(acronyms_file,json_data):
@@ -103,21 +107,24 @@ def check_acronyms(acronyms_file,json_data):
     jsonTables=json_data['Table']
 
     for table in jsonTables:
-        if not check_existance(acr_file_json,table['@Name']):
-            errors+="Element Table @Na@Name"+ table['@Name'] + "nie znajduje się w słowniku" + '\n'
+        instance_exist, msg=check_existance(acr_file_json,table['@Name'])
+        if  not instance_exist:
+            errors+="Element Table @Na@Name"+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
         TableFields=table['Field']
         for tableField in TableFields:
-            if not check_existance(acr_file_json, tableField['@Name']):
-                errors += "Element Field @Name"+ tableField['@Name'] + "nie znajduje się w słowniku" + '\n'
+            instance_exist, msg = check_existance(acr_file_json, tableField['@Name'])
+            if not instance_exist:
+                errors += "Element Field @Name"+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
             Mappings = tableField['Mapping']
             for mapping in Mappings:
                 MappingSources = mapping['Source']
                 for MappingSource in MappingSources:
                     MappingSourceFields = MappingSource['Filed']
                     for MappingSourceField in MappingSourceFields:
-                        if not check_existance(acr_file_json, MappingSourceField['@FileName']):
-                            errors += "Element Field @FileName" + MappingSourceField['@FileName']\
-                                    + "nie znajduje się w słowniku" + '\n'
+                        instance_exist, msg = check_existance(acr_file_json, MappingSourceField['@FileName'])
+                        if not instance_exist
+                            errors += "Element Field @FileName " + MappingSourceField['@FileName'] \
+                                      + ": " + msg  + " nie znajduje się w słowniku" + '\n'
 
     return errors
 
