@@ -122,7 +122,7 @@ def check_acronyms(acronyms_file,json_data):
                     MappingSourceFields = MappingSource['Filed']
                     for MappingSourceField in MappingSourceFields:
                         instance_exist, msg = check_existance(acr_file_json, MappingSourceField['@FileName'])
-                        if not instance_exist
+                        if not instance_exist:
                             errors += "Element Field @FileName " + MappingSourceField['@FileName'] \
                                       + ": " + msg  + " nie znajduje się w słowniku" + '\n'
 
