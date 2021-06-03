@@ -69,28 +69,28 @@ def create_documentation(file):
     doc_text = ''
 
     with open(file, 'r') as jsonObject:
-        schema_file = open(jsonObject['SchemaName'],'r')
-        fields_in_doc = ['description', 'type']
+        with open(jsonObject['SchemaName'],'r') as schema_file:
+            fields_in_doc = ['description', 'type']
 
-        for field in fields_in_doc:
-            if (jsonObject[field] != ''):
-                doc_text += '\n field \t' + jsonObject[field]
+            for field in fields_in_doc:
+                if (jsonObject[field] != ''):
+                    doc_text += '\n field \t' + jsonObject[field]
 
-        body = """
-                <html>
-                <head>
-                    <meta name="pdfkit-page-size" content="Legal"/>
-                    <meta name="pdfkit-orientation" content="Landscape"/>
-                </head>
-                    Dokumentacja
+            body = """
+                    <html>
+                    <head>
+                        <meta name="pdfkit-page-size" content="Legal"/>
+                        <meta name="pdfkit-orientation" content="Landscape"/>
+                    </head>
+                        Dokumentacja
 
-                    <body>""" + doc_text.dumps(jsonObject, indent=4) + """</body>
-                </html>
-                    """
+                        <body>""" + doc_text.dumps(jsonObject, indent=4) + """</body>
+                    </html>
+                        """
 
-        f = open("Model/Documentation/dokumentacja.html", "w")
-        f.write(body + "\n")
-        f.close()
+            f = open("Model/Documentation/dokumentacja.html", "w")
+            f.write(body + "\n")
+            f.close()
 
 def extract_filename(filepath):
     splitted=filepath.split("/")
