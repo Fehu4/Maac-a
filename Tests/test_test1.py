@@ -179,6 +179,7 @@ def test_test():
     for file in files.split(" "):
         if (file.endswith('.json')):
             # check_schema(file)
+            print(file)
             create_documentation(file)
 
 
