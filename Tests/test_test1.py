@@ -68,12 +68,13 @@ def create_documentation(file):
 
     doc_text = ''
 
-    schema_file = open(file['SchemaName'],'r')
+    jsonObject = open(file, 'r')
+    schema_file = open(jsonObject['SchemaName'],'r')
     fields_in_doc = ['description', 'type']
 
     for field in fields_in_doc:
-        if (file[field] != ''):
-            doc_text += '\n field \t' + file[field]
+        if (jsonObject[field] != ''):
+            doc_text += '\n field \t' + jsonObject[field]
 
     body = """
             <html>
@@ -83,7 +84,7 @@ def create_documentation(file):
               </head>
                  Dokumentacja
 
-                <body>""" + doc_text.dumps(file, indent=4) + """</body>
+                <body>""" + doc_text.dumps(jsonObject, indent=4) + """</body>
             </html>
                 """
 
