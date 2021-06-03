@@ -65,6 +65,16 @@ def validate_json(json_data, f):
 
 
 def create_documentation(file):
+
+    doc_text = ''
+
+    schema_file = open(file['SchemaName'],'r')
+    fields_in_doc = ['description', 'type']
+
+    for field in fields_in_doc:
+        if (file[field] != ''):
+            doc_text += '\n field \t' + file[field]
+
     body = """
             <html>
               <head>
@@ -73,7 +83,7 @@ def create_documentation(file):
               </head>
                  Dokumentacja
 
-                <body>""" + json.dumps(file, indent=4) + """</body>
+                <body>""" + doc_text.dumps(file, indent=4) + """</body>
             </html>
                 """
 
@@ -156,7 +166,7 @@ def check_schema(filepath):
         print(msg)
         f.write(msg + "\n" + e + "\n")
 
-    msg= check_acronyms("Dictionaries/table_name_acronyms.json",json_file)
+    msg = check_acronyms("Dictionaries/table_name_acronyms.json",json_file)
     f.write(msg)
     f.close()
     assert is_wellformed == True       
