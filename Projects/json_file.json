@@ -4,7 +4,7 @@
       {
          "@Name":"APPLICATION_CARD_REL",
          "Project":"PW123456",
-         "Directive":"Creatego",
+         "Directive":"Create",
          "LoadFrequency":[
             {
                "@Type":"daily",
@@ -29,7 +29,7 @@
          ],
          "Classification":[
             {
-               "@Id":"1234",
+               "@Id":1234,
                "Name":"Obszar biznesowy",
                "Key":"2021:1.2.3.4",
                "Value":"Klient indywidualny"
@@ -43,7 +43,7 @@
          ],
          "AccountableParty":[
             {
-               "@Type":"Ownerggg",
+               "@Type":"Owner",
                "Name":"Michał Różalski",
                "SKP":"1223456"
             },
