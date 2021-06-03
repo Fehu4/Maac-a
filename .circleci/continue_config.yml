@@ -13,12 +13,11 @@ orbs:
   python: circleci/python@1.2
 
 workflows:
-  main_test: 
-  # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
+  main_test:
+    # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
     when: << pipeline.parameters.test-zdm >>
     jobs:
       - build-and-test
-      
 
 jobs:
   build-and-test:
@@ -49,7 +48,7 @@ jobs:
       - store_artifacts:
           name: Log errors into file
           path: errors.txt
-          
+
       - run:
           name: Commit to GitHub
           command: |
@@ -58,8 +57,6 @@ jobs:
             git config user.name "Fehu4"
             git checkout circleci-project-setup
             git add logs
-            git add "dokumentacja.html"
+            git add .
             git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
             git push origin circleci-project-setup
-
-      
