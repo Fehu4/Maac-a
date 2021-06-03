@@ -84,7 +84,7 @@ def create_documentation(file):
                 </head>
                     Dokumentacja
 
-                    <body>""" + doc_text.dumps(jsonObject, indent=4) + """</body>
+                    <body>""" + doc_text + """</body>
                 </html>
                     """
 
