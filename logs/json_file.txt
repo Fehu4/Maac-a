@@ -92,3 +92,9 @@ Given JSON data is InValid
 'Creatego' is not one of ['Create', 'Alter', 'Delete', 'Leave']
 'Ownerggg' is not one of ['Owner', 'Steward']
 
+03/06/2021 15:26:27 processing Projects/json_file.json
+Given JSON data is InValid
+'1234' is not of type 'integer'
+'Creatego' is not one of ['Create', 'Alter', 'Delete', 'Leave']
+'Ownerggg' is not one of ['Owner', 'Steward']
+
