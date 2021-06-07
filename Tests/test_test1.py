@@ -6,7 +6,7 @@ from jsonschema import Draft3Validator
 import subprocess
 from datetime import datetime
 from io import StringIO
-from BusinessChecker import start_business_checker
+from MAAC-A.BusinessChecker import start_business_checker
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
