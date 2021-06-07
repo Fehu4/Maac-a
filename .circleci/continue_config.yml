@@ -45,18 +45,19 @@ jobs:
           # This assumes pytest is installed via the install-package step above
           command: pytest -s || true
 
-      # - store_artifacts:
-      #     name: Log errors into file
-      #     path: errors.txt
+      - store_artifacts:
+          name: Log errors into file
+          path: errors.txt
 
-      # - run:
-      #     name: Commit to GitHub
-      #     command: |
-      #       ls
-      #       git config user.email "areoflo@gmail.com"
-      #       git config user.name "Fehu4"
-      #       git checkout circleci-project-setup
-      #       git add logs
-      #       git add Model
-      #       git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
-      #       git push origin circleci-project-setup
+      - run:
+          name: Commit to GitHub
+          command: |
+            ls
+            git config user.email "areoflo@gmail.com"
+            git config user.name "Fehu4"
+            git checkout circleci-project-setup
+            git add logs
+            git add Projects
+            git add Model
+            git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
+            git push origin circleci-project-setup
