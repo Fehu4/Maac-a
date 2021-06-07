@@ -6,22 +6,13 @@ from jsonschema import Draft3Validator
 import subprocess
 from datetime import datetime
 from io import StringIO
+from BusinessChecker import start_business_checker
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
     with open("Schema/" + schemaName, "r") as file:
         schema = json.load(file)
     return schema
-
-# def get_json():
-#     """This function loads json file"""
-#     with open("json_file.json", "r") as file:
-#         json_file = json.load(file)
-#     return json_file
-
-# def get_latest_files():
- 
-#     return files[]
 
 def get_error_line(e, json_object):  
     marker = "3fb539deef7c4e2991f265c0a982f5ea"
@@ -88,6 +79,7 @@ def create_documentation(file):
                 </html>
                     """
 
+        ## DO ZMIANY - DOKUMENTACJA OBOK PLIKU KTÓRY BYŁ TESTOWANY
         f = open("Model/Documentation/dokumentacja.html", "w")
         f.write(body + "\n")
         f.close()
@@ -97,61 +89,14 @@ def extract_filename(filepath):
 
     return splitted[-1].replace('.json','')
 
-def check_existance(acr_file_json,value_to_check):
-    splitted=value_to_check.split("_")
-
-    msg=''
-    for abb in splitted:
-        exist_in_dict=False
-        for item in acr_file_json['dictionary_items']:
-            if item['short']==abb:
-                exist_in_dict=True
-        if exist_in_dict != True:
-            msg+=abb + " "
-    if len(msg)>0:
-        return False,msg
-    else:
-        return True,msg
-
-
-def check_acronyms(acronyms_file,json_data):
-    with open(acronyms_file, "r") as file:
-        acr_file_json = json.load(file)
-
-    errors=''
-    jsonTables=json_data['Table']
-
-    for table in jsonTables:
-        instance_exist, msg=check_existance(acr_file_json,table['@Name'])
-        if  not instance_exist:
-            errors+="Element Table @Na@Name "+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
-        TableFields=table['Field']
-        for tableField in TableFields:
-            instance_exist, msg = check_existance(acr_file_json, tableField['@Name'])
-            if not instance_exist:
-                errors += "Element Field @Name "+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
-            Mappings = tableField['Mapping']
-            for mapping in Mappings:
-                MappingSources = mapping['Source']
-                for MappingSource in MappingSources:
-                    MappingSourceFields = MappingSource['Filed']
-                    for MappingSourceField in MappingSourceFields:
-                        instance_exist, msg = check_existance(acr_file_json, MappingSourceField['@FileName'])
-                        if not instance_exist:
-                            errors += "Element Field @FileName " + MappingSourceField['@FileName'] \
-                                      + ": " + msg  + " nie znajduje się w słowniku" + '\n'
-
-    return errors
-
-
 def check_schema(filepath):
     is_wellformed = True
     is_valid = False
 
     dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
-    f = open("logs/"+extract_filename(filepath)+".txt", "a")
-    f.write(dateLog + " processing " + filepath + "\n")
+    f = open(filepath.replace('.json','') + ".txt", "a")
+    f.write(dateLog + " TECHNICAL TEST - processing " + filepath + "\n")
 
     try:
         with open(filepath, 'r') as file:
@@ -159,28 +104,32 @@ def check_schema(filepath):
             is_valid, msg, error_text = validate_json(json_file,f)
             print(msg)
             f.write(msg + "\n" + error_text + "\n")
-            create_documentation(json_file)
+            #create_documentation(json_file)
     except Exception as e:
         print(e)
         is_wellformed=False
-        msg=filepath + " not  well-formed"
+        msg=filepath + " not well-formed"
         print(msg)
         f.write(msg + "\n" + e + "\n")
 
-    msg = check_acronyms("Dictionaries/table_name_acronyms.json",json_file)
-    f.write(msg)
     f.close()
-    assert is_wellformed == True       
-    assert is_valid == True 
+
+    if (is_wellformed and is_valid):
+        return True
+    else:
+        return False
 
 
-def test_test():
+def test_main():
     files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
     for file in files.split(" "):
         if (file.endswith('.json')):
-            # check_schema(file)
-            print(file)
-            create_documentation(file)
+            technical_test_correct = check_schema(file)
+            if (technical_test_correct):
+                start_business_checker()
+
+            #print(file)
+            #create_documentation(file)
 
 
 
