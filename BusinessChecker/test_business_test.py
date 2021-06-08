@@ -37,12 +37,12 @@ def check_acronyms(acronyms_file,json_data):
     for table in jsonTables:
         instance_exist, msg=check_existance(acr_file_json,table['@Name'])
         if  not instance_exist:
-            errors+="\t\tElement Table @Na@Name "+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
+            errors+="Element Table @Na@Name "+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
         TableFields=table['Field']
         for tableField in TableFields:
             instance_exist, msg = check_existance(acr_file_json, tableField['@Name'])
             if not instance_exist:
-                errors += "\t\tElement Field @Name "+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
+                errors += "Element Field @Name "+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
             Mappings = tableField['Mapping']
             for mapping in Mappings:
                 MappingSources = mapping['Source']
@@ -51,7 +51,7 @@ def check_acronyms(acronyms_file,json_data):
                     for MappingSourceField in MappingSourceFields:
                         instance_exist, msg = check_existance(acr_file_json, MappingSourceField['@FileName'])
                         if not instance_exist:
-                            errors += "\t\tElement Field @FileName " + MappingSourceField['@FileName'] \
+                            errors += "Element Field @FileName " + MappingSourceField['@FileName'] \
                                       + ": " + msg  + " nie znajduje się w słowniku" + '\n'
 
     return errors
@@ -64,6 +64,7 @@ def log_data(file, dictionary_check_correct, err):
     else:
         f.write(err)
 
+    f.write("\n")
     f.close()
 
 
