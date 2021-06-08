@@ -105,7 +105,9 @@ def check_schema(filepath):
             f.write("JSON is well-formed\n")
             is_valid, msg, error_text = validate_json(json_file,f)
             print(msg)
-            f.write(msg + "\n" + error_text + "\n")
+            f.write(msg + "\n")
+            if(!is_valid):
+                f.write(error_text + "\n")
             #create_documentation(json_file)
     except Exception as e:
         print(e)
