@@ -4,3 +4,6 @@ Given JSON data is Valid
 08/06/2021 16:48:03 TECHNICAL TEST - processing Projects/PW0001/PW0001_v1.0.json
 Given JSON data is Valid
 
+08/06/2021 17:20:50 TECHNICAL TEST - processing Projects/PW0001/PW0001_v1.0.json
+Given JSON data is Valid
+
