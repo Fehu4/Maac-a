@@ -44,7 +44,7 @@ def validate_json(json_data, f):
     error_text=''
     for error in sorted(errors, key=str):
         print("Line {} --- ".format(get_error_line(error, json_data)) + error.message)
-        error_text += error.message + "\n"
+        error_text += "Line {}: ".format(get_error_line(error, json_data)) + error.message + "\n"
         errCount += 1
         
     if errCount > 0:
