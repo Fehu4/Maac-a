@@ -96,21 +96,22 @@ def check_schema(filepath):
     dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
     f = open(filepath.replace('.json','') + "_LOG.txt", "a")
-    f.write(dateLog + " TECHNICAL TEST - processing " + filepath + "\n")
+    f.write(dateLog + " - processing " + filepath + "\n")
+    f.write("\tTECHNICAL TEST:\n")
 
     try:
         with open(filepath, 'r') as file:
             json_file = json.load(file)
             is_valid, msg, error_text = validate_json(json_file,f)
             print(msg)
-            f.write(msg + "\n" + error_text + "\n")
+            f.write("t\t" + msg + "\n" + error_text + "\n")
             #create_documentation(json_file)
     except Exception as e:
         print(e)
         is_wellformed=False
         msg=filepath + " not well-formed"
         print(msg)
-        f.write(msg + "\n" + e + "\n")
+        f.write("\t\t" + msg + "\n\t\t" + e + "\n")
 
     f.close()
 
