@@ -126,7 +126,7 @@ def test_main():
         if (file.endswith('.json')):
             technical_test_correct = check_schema(file)
             if (technical_test_correct):
-                start_business_checker()
+                test_business_test.start_business_checker()
 
             #print(file)
             #create_documentation(file)
