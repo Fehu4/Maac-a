@@ -25,3 +25,9 @@ Given JSON data is Valid
 
 BUSINESS CHECKER:
 Dictionary check OK
+08/06/2021 18:26:37 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+JSON is well-formed
+Given JSON data is InValid
+		'1233xxx' is not of type 'integer'
+
