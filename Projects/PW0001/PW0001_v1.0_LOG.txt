@@ -37,3 +37,9 @@ TECHNICAL TESTS:
 TECHNICAL TESTS:
 Projects/PW0001/PW0001_v1.0.json is not well-formed
 Expecting ',' delimiter: line 33 column 16 (char 1049)
+08/06/2021 18:49:38 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+JSON is well-formed
+Given JSON data is InValid
+'1233xxx' is not of type 'integer'
+
