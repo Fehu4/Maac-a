@@ -33,3 +33,7 @@ Given JSON data is InValid
 
 08/06/2021 18:44:34 - processing Projects/PW0001/PW0001_v1.0.json
 TECHNICAL TESTS:
+08/06/2021 18:46:27 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+Projects/PW0001/PW0001_v1.0.json is not well-formed
+Expecting ',' delimiter: line 33 column 16 (char 1049)
