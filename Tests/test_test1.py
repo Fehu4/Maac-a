@@ -114,7 +114,7 @@ def check_schema(filepath):
         is_wellformed=False
         msg=filepath + " is not well-formed"
         print(msg)
-        f.write(msg + "\n" + e + "\n")
+        f.write(msg + "\n" + str(e) + "\n")
 
     f.close()
 
