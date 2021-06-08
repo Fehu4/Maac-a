@@ -76,7 +76,7 @@ def dictionary_test(files):
     
     for file in files.split(" "):
         if (file.endswith('.json')):
-            err = check_acronyms("Dictionaries/table_name_acronyms.json",file)
+            #err = check_acronyms("Dictionaries/table_name_acronyms.json",file)
             if (dictionary_check_correct == True and err != ''):
                 dictionary_check_correct = False
             log_data(file, dictionary_check_correct, err)
