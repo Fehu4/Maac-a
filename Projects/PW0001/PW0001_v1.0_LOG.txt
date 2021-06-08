@@ -11,4 +11,10 @@ Given JSON data is Valid
 Given JSON data is Valid
 
 08/06/2021 17:22:59 BUSINESS CHECKER - processing Projects/PW0001/PW0001_v1.0.json
-dictionary check OK
+dictionary check OK08/06/2021 17:54:45 - processing Projects/PW0001/PW0001_v1.0.json
+	TECHNICAL TESTS:
+		Projects/PW0001/PW0001_v1.0.json is well-formed
+t	Given JSON data is Valid
+
+	BUSINESS CHECKER:
+		dictionary check OK
