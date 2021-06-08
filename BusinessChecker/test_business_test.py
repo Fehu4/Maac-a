@@ -60,7 +60,7 @@ def log_data(file, dictionary_check_correct, err):
     dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
     f = open(file.replace('.json','') + "_LOG.txt", "a")
-    f.write(dateLog + " BUSINESS CHECKER - processing " + filepath + "\n")
+    f.write(dateLog + " BUSINESS CHECKER - processing " + file + "\n")
     if(dictionary_check_correct):
         f.write("dictionary check OK")
     else:
