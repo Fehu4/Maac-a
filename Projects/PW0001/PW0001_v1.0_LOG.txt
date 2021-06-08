@@ -43,3 +43,10 @@ JSON is well-formed
 Given JSON data is InValid
 '1233xxx' is not of type 'integer'
 
+08/06/2021 18:52:12 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is Valid
+BUSINESS CHECKER:
+Dictionary check OK
+
