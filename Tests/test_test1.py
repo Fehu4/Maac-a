@@ -95,7 +95,7 @@ def check_schema(filepath):
 
     dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     
-    f = open(filepath.replace('.json','') + ".txt", "a")
+    f = open(filepath.replace('.json','') + "_LOG.txt", "a")
     f.write(dateLog + " TECHNICAL TEST - processing " + filepath + "\n")
 
     try:
