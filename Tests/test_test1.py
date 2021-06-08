@@ -102,7 +102,7 @@ def check_schema(filepath):
     try:
         with open(filepath, 'r') as file:
             json_file = json.load(file)
-            f.write("JSON is well-formed\n")
+            f.write("Given JSON data is well-formed\n")
             is_valid, msg, error_text = validate_json(json_file,f)
             print(msg)
             f.write(msg + "\n")
@@ -112,7 +112,7 @@ def check_schema(filepath):
     except Exception as e:
         print(e)
         is_wellformed=False
-        msg=filepath + " is not well-formed"
+        msg="Given JSON data is not well-formed"
         print(msg)
         f.write(msg + "\n" + str(e) + "\n")
 
