@@ -44,7 +44,7 @@ def validate_json(json_data, f):
     error_text=''
     for error in sorted(errors, key=str):
         print("Line {} --- ".format(get_error_line(error, json_data)) + error.message)
-        error_text += error.message + "\n"
+        error_text += "\t\t" + error.message + "\n"
         errCount += 1
         
     if errCount > 0:
@@ -97,11 +97,12 @@ def check_schema(filepath):
     
     f = open(filepath.replace('.json','') + "_LOG.txt", "a")
     f.write(dateLog + " - processing " + filepath + "\n")
-    f.write("\tTECHNICAL TEST:\n")
+    f.write("\tTECHNICAL TESTS:\n")
 
     try:
         with open(filepath, 'r') as file:
             json_file = json.load(file)
+            f.write("\t\t" + filepath + " is well-formed\n")
             is_valid, msg, error_text = validate_json(json_file,f)
             print(msg)
             f.write("t\t" + msg + "\n" + error_text + "\n")
@@ -109,7 +110,7 @@ def check_schema(filepath):
     except Exception as e:
         print(e)
         is_wellformed=False
-        msg=filepath + " not well-formed"
+        msg=filepath + " is not well-formed"
         print(msg)
         f.write("\t\t" + msg + "\n\t\t" + e + "\n")
 
