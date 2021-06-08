@@ -58,9 +58,9 @@ def check_acronyms(acronyms_file,json_data):
 
 def log_data(file, dictionary_check_correct, err):
     f = open(file.replace('.json','') + "_LOG.txt", "a")
-    f.write("\tBUSINESS CHECKER:\n")
+    f.write("BUSINESS CHECKER:\n")
     if(dictionary_check_correct):
-        f.write("\t\tdictionary check OK\n")
+        f.write("Dictionary check OK\n")
     else:
         f.write(err)
 
