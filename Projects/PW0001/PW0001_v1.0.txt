@@ -1,4 +1,0 @@
-08/06/2021 16:43:16 TECHNICAL TEST - processing Projects/PW0001/PW0001_v1.0.json
-Given JSON data is InValid
-'1234lkkj' is not of type 'integer'
-
