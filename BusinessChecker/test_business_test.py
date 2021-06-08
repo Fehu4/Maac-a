@@ -37,12 +37,12 @@ def check_acronyms(acronyms_file,json_data):
     for table in jsonTables:
         instance_exist, msg=check_existance(acr_file_json,table['@Name'])
         if  not instance_exist:
-            errors+="Element Table @Na@Name "+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
+            errors+="\t\tElement Table @Na@Name "+ table['@Name'] + ": "+ msg+ " nie znajduje się w słowniku" + '\n'
         TableFields=table['Field']
         for tableField in TableFields:
             instance_exist, msg = check_existance(acr_file_json, tableField['@Name'])
             if not instance_exist:
-                errors += "Element Field @Name "+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
+                errors += "\t\tElement Field @Name "+ tableField['@Name'] + ": "+ msg+ "nie znajduje się w słowniku" + '\n'
             Mappings = tableField['Mapping']
             for mapping in Mappings:
                 MappingSources = mapping['Source']
@@ -51,18 +51,16 @@ def check_acronyms(acronyms_file,json_data):
                     for MappingSourceField in MappingSourceFields:
                         instance_exist, msg = check_existance(acr_file_json, MappingSourceField['@FileName'])
                         if not instance_exist:
-                            errors += "Element Field @FileName " + MappingSourceField['@FileName'] \
+                            errors += "\t\tElement Field @FileName " + MappingSourceField['@FileName'] \
                                       + ": " + msg  + " nie znajduje się w słowniku" + '\n'
 
     return errors
 
 def log_data(file, dictionary_check_correct, err):
-    dateLog = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    
     f = open(file.replace('.json','') + "_LOG.txt", "a")
-    f.write(dateLog + " BUSINESS CHECKER - processing " + file + "\n")
+    f.write("\tBUSINESS CHECKER:\n")
     if(dictionary_check_correct):
-        f.write("dictionary check OK")
+        f.write("\t\tdictionary check OK\n")
     else:
         f.write(err)
 
