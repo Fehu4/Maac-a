@@ -29,13 +29,13 @@
          ],
          "Classification":[
             {
-               "@Id":1234,
+               "@Id":"1234xx",
                "Name":"Obszar biznesowy",
                "Key":"2021:1.2.3.4",
                "Value":"Klient indywidualny"
             },
             {
-               "@Id":324,
+               "@Id":"324xx",
                "Name":"Ontologia Danych",
                "Key":"2021:3.23.4",
                "Value":"Osoby"
@@ -95,7 +95,7 @@
                },
                "Classification":[
                   {
-                     "@Id":1234,
+                     "@Id":"1234x",
                      "Name":"Obszar biznesowy",
                      "Key":"2021:1.2.3.4",
                      "Value":"Klient indywidualny"
