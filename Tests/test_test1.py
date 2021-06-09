@@ -62,30 +62,31 @@ def create_documentation(file):
     print(file)
     doc_text = ''
 
-    with open(file, 'r') as jsonObject:
-        # with open(jsonObject['SchemaName'],'r') as schema_file:
-        fields_in_doc = ['@Name','Project','Directive']
+    jsonObject = json.load(open(file))
 
-        for field in fields_in_doc:
-            if (jsonObject['Table'][field] != ''):
-                doc_text += '\n ' + field +' \t' + jsonObject['Table'][field]
+    # with open(jsonObject['SchemaName'],'r') as schema_file:
+    fields_in_doc = ['@Name','Project','Directive']
 
-        body = """
-                <html>
-                <head>
-                    <meta name="pdfkit-page-size" content="Legal"/>
-                    <meta name="pdfkit-orientation" content="Landscape"/>
-                </head>
-                    Dokumentacja
+    for field in fields_in_doc:
+        if (jsonObject['Table'][field] != ''):
+            doc_text += '\n ' + field +' \t' + jsonObject['Table'][field]
 
-                    <body>""" + doc_text + """</body>
-                </html>
-                    """
+    body = """
+            <html>
+            <head>
+                <meta name="pdfkit-page-size" content="Legal"/>
+                <meta name="pdfkit-orientation" content="Landscape"/>
+            </head>
+                Dokumentacja
 
-        ## DO ZMIANY - DOKUMENTACJA OBOK PLIKU KTÓRY BYŁ TESTOWANY
-        f = open(file.replace('.json','') + "_doc.html", "a")
-        f.write(body + "\n")
-        f.close()
+                <body>""" + doc_text + """</body>
+            </html>
+                """
+
+    ## DO ZMIANY - DOKUMENTACJA OBOK PLIKU KTÓRY BYŁ TESTOWANY
+    f = open(file.replace('.json','') + "_doc.html", "a")
+    f.write(body + "\n")
+    f.close()
 
 def extract_filename(filepath):
     splitted=filepath.split("/")
