@@ -9,7 +9,7 @@
     "Table": {
       "description": "Table name",
       "type": "array",
-      "items": [
+      "items":
         {
           "type": "object",
           "properties": {
@@ -30,7 +30,7 @@
             },
             "LoadFrequency": {
               "type": "array",
-              "items": [
+              "items":
                 {
                   "type": "object",
                   "properties": {
@@ -47,11 +47,11 @@
                     "Execute"
                   ]
                 }
-              ]
+
             },
             "BusinessDescription": {
               "type": "array",
-              "items": [
+              "items":
                 {
                   "type": "object",
                   "properties": {
@@ -72,11 +72,11 @@
                     "Definition"
                   ]
                 }
-              ]
+
             },
             "Classification": {
               "type": "array",
-              "items": [
+              "items":
                 {
                   "type": "object",
                   "properties": {
@@ -101,11 +101,11 @@
                     "Value"
                   ]
                 }
-              ]
+
             },
             "AccountableParty": {
               "type": "array",
-              "items": [
+              "items":
                 {
                   "type": "object",
                   "properties": {
@@ -126,11 +126,11 @@
                     "SKP"
                   ]
                 }
-              ]
+
             },
             "Field": {
               "type": "array",
-              "items": [
+              "items":
                 {
                   "type": "object",
                   "properties": {
@@ -145,7 +145,7 @@
                     },
                     "BusinessDescription": {
                       "type": "array",
-                      "items": [
+                      "items":
                         {
                           "type": "object",
                           "properties": {
@@ -165,7 +165,7 @@
                             "Definition"
                           ]
                         }
-                      ]
+
                     },
                     "DataType": {
                       "type": "string"
@@ -204,7 +204,7 @@
                         },
                         "ForeignKey": {
                           "type": "array",
-                          "items": [
+                          "items":
                             {
                               "type": "object",
                               "properties": {
@@ -224,7 +224,7 @@
                                 "ForeignKeyCount"
                               ]
                             }
-                          ]
+
                         }
                       },
                       "required": [
@@ -236,7 +236,7 @@
                     "Classification": {
                       "description": "Classifications and taxonomies",
                       "type": "array",
-                      "items": [
+                      "items":
                         {
                           "type": "object",
                           "properties": {
@@ -260,12 +260,12 @@
                             "Value"
                           ]
                         }
-                      ]
+
                     },
                     "Mapping": {
                       "description": "Mappin details",
                       "type": "array",
-                      "items": [
+                      "items":
                         {
                           "type": "object",
                           "properties": {
@@ -303,7 +303,7 @@
                             },
                             "Source": {
                               "type": "array",
-                              "items": [
+                              "items":
                                 {
                                   "type": "object",
                                   "properties": {
@@ -315,7 +315,7 @@
                                     },
                                     "Filed": {
                                       "type": "array",
-                                      "items": [
+                                      "items":
                                         {
                                           "type": "object",
                                           "properties": {
@@ -331,7 +331,7 @@
                                             "FieldName"
                                           ]
                                         }
-                                      ]
+
                                     }
                                   },
                                   "required": [
@@ -340,7 +340,7 @@
                                     "Filed"
                                   ]
                                 }
-                              ]
+
                             },
                             "Description": {
                               "type": "string"
@@ -355,15 +355,15 @@
                             "Description"
                           ]
                         }
-                      ]
+
                     }
                   }
                 }
-              ]
+
             }
           }
         }
-      ]
+
     }
   },
   "required": [
