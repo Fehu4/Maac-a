@@ -80,7 +80,7 @@ def create_documentation(file):
                     """
 
         ## DO ZMIANY - DOKUMENTACJA OBOK PLIKU KTÓRY BYŁ TESTOWANY
-        f = open(file.replace('.json','') + "_doc.html", "w")
+        f = open(file.replace('.json','') + "_doc.html", "a")
         f.write(body + "\n")
         f.close()
 
