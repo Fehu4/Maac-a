@@ -104,3 +104,11 @@ Table0Field0Classification0@Id'1234x' is not of type 'integer'
 Table0Classification0@Id'1234xxxxx' is not of type 'integer'
 Table0Classification1@Id'324xx' is not of type 'integer'
 
+09/06/2021 18:43:29 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is InValid
+Table 0 Field 0 Classification 0 @Id : '1234x' is not of type 'integer'
+Table 0 Classification 0 @Id : '1234xxxx' is not of type 'integer'
+Table 0 Classification 1 @Id : '324xx' is not of type 'integer'
+
