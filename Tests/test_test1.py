@@ -63,7 +63,7 @@ def create_documentation(file):
     doc_text = ''
 
     jsonObject = json.load(open(file))
-
+    jsonSchema = json.load(open(jsonObject['SchemaName'],'r'))
     # with open(jsonObject['SchemaName'],'r') as schema_file:
     fields_in_doc = ['@Name','Project','Directive']
 
@@ -71,21 +71,8 @@ def create_documentation(file):
         if (jsonObject['Table'][0][field] != ''):
             doc_text += '\n ' + field +' \t' + jsonObject['Table'][0][field]
 
-    body = """
-            <html>
-            <head>
-                <meta name="pdfkit-page-size" content="Legal"/>
-                <meta name="pdfkit-orientation" content="Landscape"/>
-            </head>
-                Dokumentacja
-
-                <body>""" + doc_text + """</body>
-            </html>
-                """
-
-    ## DO ZMIANY - DOKUMENTACJA OBOK PLIKU KTÓRY BYŁ TESTOWANY
     f = open(file.replace('.json','') + "_doc.html", "a")
-    f.write(body + "\n")
+    f.write(doc_text + "\n")
     f.close()
 
 def extract_filename(filepath):
