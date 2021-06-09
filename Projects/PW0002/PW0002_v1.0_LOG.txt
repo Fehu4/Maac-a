@@ -1,0 +1,8 @@
+09/06/2021 18:46:00 - processing Projects/PW0002/PW0002_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is Valid
+BUSINESS CHECKER:
+Element Table @Na@Name APPLICATION_CARD_REL: APPLICATION CARD REL  nie znajduje się w słowniku
+Element Field @FileName WH_APPL_NOO: NOO  nie znajduje się w słowniku
+
