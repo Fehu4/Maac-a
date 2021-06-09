@@ -96,3 +96,11 @@ TECHNICAL TESTS:
 Given JSON data is well-formed
 Given JSON data is not well-formed
 sequence item 1: expected str instance, int found
+09/06/2021 18:40:34 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is InValid
+Table0Field0Classification0@Id'1234x' is not of type 'integer'
+Table0Classification0@Id'1234xxxxx' is not of type 'integer'
+Table0Classification1@Id'324xx' is not of type 'integer'
+
