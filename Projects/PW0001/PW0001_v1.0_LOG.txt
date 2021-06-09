@@ -57,3 +57,11 @@ Given JSON data is InValid
 Line 1: '1234x' is not of type 'integer'
 Line 1: '1234xx' is not of type 'integer'
 
+09/06/2021 18:21:30 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is InValid
+Line 98: '1234x' is not of type 'integer'
+Line 32: '1234xxx' is not of type 'integer'
+Line 32: '324xx' is not of type 'integer'
+
