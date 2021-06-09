@@ -65,6 +65,7 @@ jobs:
       - checkout:
         name: Checkout main
         command: git checkout main
-      -merge:
+
+      - merge:
         name: Merge files to main
         command: git merge circleci-project-setup
