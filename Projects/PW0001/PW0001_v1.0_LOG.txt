@@ -83,3 +83,11 @@ Line 98: '1234x' is not of type 'integer'
 Line 32: '1234xxxx' is not of type 'integer'
 Line 32: '324xx' is not of type 'integer'
 
+09/06/2021 18:32:38 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is InValid
+Line 98: '1234x' is not of type 'integer'
+Line 32: '1234xxxxx' is not of type 'integer'
+Line 32: '324xx' is not of type 'integer'
+
