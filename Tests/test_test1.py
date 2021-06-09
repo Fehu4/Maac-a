@@ -108,7 +108,6 @@ def check_schema(filepath):
             f.write(msg + "\n")
             if(is_valid == False):
                 f.write(error_text + "\n")
-            create_documentation(filepath)
     except Exception as e:
         print(e)
         is_wellformed=False
@@ -118,6 +117,8 @@ def check_schema(filepath):
 
     f.close()
 
+    create_documentation(filepath)
+
     if (is_wellformed and is_valid):
         return True
     else:
@@ -125,15 +126,15 @@ def check_schema(filepath):
 
 
 def test_main():
-    files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
-    for file in files.split(" "):
-        if (file.endswith('.json')):
-            technical_test_correct = check_schema(file)
-            if (technical_test_correct):
-                test_business_test.start_business_checker()
+    # files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
+    # for file in files.split(" "):
+    #     if (file.endswith('.json')):
+    #         technical_test_correct = check_schema(file)
+    #         if (technical_test_correct):
+    #             test_business_test.start_business_checker()
 
             #print(file)
-            #create_documentation(file)
+    create_documentation('Projects/json_file.json')
 
 
 
