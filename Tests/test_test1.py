@@ -72,7 +72,10 @@ def create_documentation(file):
             try:
                 doc_text += '\n ' + field +' \t'+ jsonObject['Table'][0][field] + '\t' + field_in_doc + ':\t' + jsonSchema['properties']['Table']['items']['properties'][field][field_in_doc]
             except:
-                print(field_in_doc + " not found in " + field)
+                try:
+                    doc_text += '\n ' + field +' \t' + field_in_doc + ':\t' + jsonSchema['properties']['Table']['items']['properties'][field][field_in_doc]
+                    except:
+                        print(field_in_doc + " not found in " + field)
 
     f = open(file.replace('.json','') + "_doc.html", "a")
     f.write(doc_text + "\n")
