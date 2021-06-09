@@ -4,14 +4,14 @@
       {
          "@Name":"APPLICATION_CARD_REL",
          "Project":"PW123456",
-         "Directive":"Cregggate",
+         "Directive":"Create",
          "LoadFrequency":[
             {
                "@Type":"daily",
                "Execute":true
             },
             {
-               "@Type":"monthlyyy",
+               "@Type":"bbbb",
                "Execute":false
             }
          ],
