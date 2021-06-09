@@ -1,0 +1,7 @@
+09/06/2021 11:10:25 - processing Projects/json_file.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is Valid
+BUSINESS CHECKER:
+Dictionary check OK
+
