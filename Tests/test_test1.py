@@ -23,7 +23,7 @@ def get_error_line(e, json_object):
 
     orig, ob_tmp[e.path[-1]] = ob_tmp[e.path[-1]], marker
 
-    json_error = json.dumps(json_object)
+    json_error = json.dumps(json_object, indent=4)
     io = StringIO(json_error)
     errline = None
 
@@ -117,7 +117,7 @@ def check_schema(filepath):
 
     f.close()
 
-    create_documentation(filepath)
+    #create_documentation(filepath)
 
     if (is_wellformed and is_valid):
         return True
@@ -126,15 +126,15 @@ def check_schema(filepath):
 
 
 def test_main():
-    # files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
-    # for file in files.split(" "):
-    #     if (file.endswith('.json')):
-    #         technical_test_correct = check_schema(file)
-    #         if (technical_test_correct):
-    #             test_business_test.start_business_checker()
+    files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
+    for file in files.split(" "):
+        if (file.endswith('.json')):
+            technical_test_correct = check_schema(file)
+            if (technical_test_correct):
+                test_business_test.start_business_checker()
 
-            #print(file)
-    create_documentation('Projects/json_file.json')
+            print(file)
+    #create_documentation('Projects/json_file.json')
 
 
 
