@@ -61,15 +61,6 @@ jobs:
             git add Model
             git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
             git push origin circleci-project-setup
-
-      - run:
-        name: Checkout main
-        command: git checkout main
-
-      - run:
-        name: Merge files to main
-        command: git merge circleci-project-setup
-
-      - run:
-        name: Push on main
-        command: git push
+            git checkout main
+            git merge circleci-project-setup
+            git push
