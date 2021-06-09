@@ -70,3 +70,8 @@ TECHNICAL TESTS:
 Given JSON data is well-formed
 Given JSON data is not well-formed
 unsupported operand type(s) for +: 'NoneType' and 'int'
+09/06/2021 18:29:11 - processing Projects/PW0001/PW0001_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is not well-formed
+unsupported operand type(s) for +: 'NoneType' and 'int'
