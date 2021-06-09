@@ -62,14 +62,14 @@ def create_documentation(file):
     print(file)
     doc_text = ''
 
-    jsonObject = json.loads(open(file))[0]
+    jsonObject = json.load(open(file))
 
     # with open(jsonObject['SchemaName'],'r') as schema_file:
-    fields_in_doc = ['@Name','Project','Directive']
+    fields_in_doc = ['SchemaName']
 
     for field in fields_in_doc:
-        if (jsonObject['Table'][field] != ''):
-            doc_text += '\n ' + field +' \t' + jsonObject['Table'][field]
+        if (jsonObject[field] != ''):
+            doc_text += '\n ' + field +' \t' + jsonObject[field]
 
     body = """
             <html>
