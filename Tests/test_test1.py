@@ -68,7 +68,7 @@ def create_documentation(file):
 
         for field in fields_in_doc:
             if (jsonObject['Table'][field] != ''):
-                doc_text += '\n field \t' + jsonObject[field]
+                doc_text += '\n ' + field +' \t' + jsonObject['Table'][field]
 
         body = """
                 <html>
