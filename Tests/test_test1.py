@@ -70,7 +70,7 @@ def create_documentation(file):
     for field in jsonObject['Table'][0]:
         for field_in_doc in fields_in_doc:
             try:
-                doc_text += '\n ' + field +' \t' + jsonSchema['properties']['Table'][field][field_in_doc]
+                doc_text += '\n ' + field +' \t' + jsonSchema['properties']['Table']['items']['properties'][field][field_in_doc]
             except:
                 print(field_in_doc + " not found in " + field)
 
