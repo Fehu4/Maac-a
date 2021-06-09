@@ -59,7 +59,7 @@ def validate_json(json_data, f):
 
 
 def create_documentation(file):
-
+    print(file)
     doc_text = ''
 
     with open(file, 'r') as jsonObject:
@@ -129,15 +129,15 @@ def check_schema(filepath):
 
 
 def test_main():
-#     files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
-#     for file in files.split(" "):
-#         if (file.endswith('.json')):
-#             technical_test_correct = check_schema(file)
-#             if (technical_test_correct):
-#                 test_business_test.start_business_checker()
+    files=subprocess.getoutput('git diff-tree --no-commit-id --name-only -r HEAD')
+    for file in files.split(" "):
+        if (file.endswith('.json')):
+            technical_test_correct = check_schema(file)
+            if (technical_test_correct):
+                test_business_test.start_business_checker()
 
 #             print(file)
-    create_documentation('Projects/json_file.json')
+   # create_documentation('Projects/json_file.json')
 
 
 
