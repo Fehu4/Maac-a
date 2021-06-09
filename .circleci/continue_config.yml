@@ -69,3 +69,7 @@ jobs:
       - merge:
         name: Merge files to main
         command: git merge circleci-project-setup
+
+      - push:
+        name: Push on main
+        command: git push
