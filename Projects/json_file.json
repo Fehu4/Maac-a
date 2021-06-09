@@ -11,7 +11,7 @@
                "Execute":true
             },
             {
-               "@Type":"monthlyyyy",
+               "@Type":"bbbb",
                "Execute":false
             }
          ],
@@ -41,7 +41,7 @@
                "Value":"Osoby"
             }
          ],
-         "AccountableParty":[
+         "AccountaParty":[
             {
                "@Type":"Owner",
                "Name":"Michał Różalski",
