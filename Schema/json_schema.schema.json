@@ -17,7 +17,7 @@
               "type": "string",
               "maxLength": 30,
               "pattern": ".*_REL$",
-              "description": "TODO: pattern" 
+              "description": "TODO: paattern" 
             },
             "Project": {
               "description": "Numer projektu",
