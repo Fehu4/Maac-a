@@ -41,7 +41,7 @@
                "Value":"Osoby"
             }
          ],
-         "AccountableParty":[
+         "AccountaParty":[
             {
                "@Type":"Owner",
                "Name":"Michał Różalski",
