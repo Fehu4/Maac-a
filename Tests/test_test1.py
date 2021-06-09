@@ -62,7 +62,7 @@ def create_documentation(file):
     print(file)
     doc_text = ''
 
-    jsonObject = json.load(open(file))[0]
+    jsonObject = json.loads(open(file))[0]
 
     # with open(jsonObject['SchemaName'],'r') as schema_file:
     fields_in_doc = ['@Name','Project','Directive']
