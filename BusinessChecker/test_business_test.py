@@ -27,9 +27,12 @@ def check_existance(acr_file_json,value_to_check):
     else:
         return True,msg
 
-def check_acronyms(acronyms_file,json_data):
+def check_acronyms(acronyms_file,json_file_path):
     with open(acronyms_file, "r") as file:
         acr_file_json = json.load(file)
+
+    with open(json_file_path, "r") as file:
+        json_data = json.load(file)
 
     errors=''
     jsonTables=json_data['Table']
@@ -75,7 +78,7 @@ def dictionary_test(files):
     
     for file in files.split(" "):
         if (file.endswith('.json')):
-            #err = check_acronyms("Dictionaries/table_name_acronyms.json",file)
+            err = check_acronyms("Dictionaries/table_name_acronyms.json",file)
             if (dictionary_check_correct == True and err != ''):
                 dictionary_check_correct = False
             log_data(file, dictionary_check_correct, err)
