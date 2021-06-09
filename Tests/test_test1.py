@@ -80,7 +80,7 @@ def create_documentation(file):
                     """
 
         ## DO ZMIANY - DOKUMENTACJA OBOK PLIKU KTÓRY BYŁ TESTOWANY
-        f = open("Model/Documentation/dokumentacja.html", "w")
+        f = open(file + "doc.html", "w")
         f.write(body + "\n")
         f.close()
 
@@ -108,7 +108,7 @@ def check_schema(filepath):
             f.write(msg + "\n")
             if(is_valid == False):
                 f.write(error_text + "\n")
-            #create_documentation(json_file)
+            create_documentation(json_file)
     except Exception as e:
         print(e)
         is_wellformed=False
