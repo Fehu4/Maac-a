@@ -7,6 +7,7 @@ import subprocess
 from datetime import datetime
 from io import StringIO
 import test_business_test
+import copy
 
 def get_schema(schemaName):
     """This function loads the given schema available"""
@@ -17,7 +18,7 @@ def get_schema(schemaName):
 def get_error_line(e, json_object):  
     marker = "3fb539deef7c4e2991f265c0a982f5ea"
 
-    ob_tmp = json_object
+    ob_tmp = copy.deepcopy(json_object)
     for entry in list(e.path)[:-1]:
         ob_tmp = ob_tmp[entry]
 
