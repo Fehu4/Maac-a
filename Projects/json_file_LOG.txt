@@ -130,3 +130,7 @@ Given JSON data is Valid
 TECHNICAL TESTS:
 Given JSON data is well-formed
 Given JSON data is Valid
+10/06/2021 16:59:45 - processing Projects/json_file.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is Valid
