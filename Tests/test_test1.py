@@ -64,7 +64,7 @@ def get_table_template_ending():
     return '</table>'
 
 def create_row(field_name,field_value,prop_name,prop_value):
-    return '<tr><th>{0}</th><th>{1}</th><th>{2}</th><th>{3}</th></tr>'.format(field_name,field_value,prop_name,prop_value)
+    return '<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td></tr>'.format(field_name,field_value,prop_name,prop_value)
 
 
 def create_documentation(file):
