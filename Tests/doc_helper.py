@@ -12,6 +12,24 @@ def get_table_template_ending():
 def create_row(field_name,field_value,prop_name,prop_value):
     return '<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td></tr>'.format(field_name,field_value,prop_name,prop_value)
 
+def loop_over(jsonField, propertiesFields):
+
+    doc_text = ''
+
+    for fieldInJson in jsonField:
+        for fieldProperty in propertiesFields:
+            
+            value = fieldInJson[fieldInJson]
+
+            if (not isinstance(value, list)):
+
+                return create_row(fieldInJson, value, fieldProperty, value[fieldProperty])
+            
+            else:
+
+                return create_row(fieldInJson, 'ARRAY FOUND', fieldProperty, value[fieldProperty]) + loop_over(fieldInJson, propertiesFields)
+
+
 
 def create_documentation(file):
 
@@ -28,23 +46,7 @@ def create_documentation(file):
 
     for fieldInJson in jsonObjectFragmentToSearchIn:
 
-        for fieldProperty in fieldProps:
-
-            value = jsonObjectFragmentToSearchIn[fieldInJson]
-
-            if (not isinstance(value, list)):
-
-                try:
-                    doc_text += create_row(fieldInJson, value, fieldProperty, jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty])
-                except:
-                    print(fieldProperty + " not found in " + fieldInJson)
-
-            else:
-
-                try:
-                    doc_text += create_row(fieldInJson, 'ARRAY FOUND', fieldProperty, jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty])
-                except:
-                    print(fieldProperty + " not found in " + fieldInJson)
+        doc_text += loop_over(fieldInJson, fieldProps)
 
     doc_text += get_table_template_ending()
 

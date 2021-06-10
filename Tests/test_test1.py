@@ -85,7 +85,7 @@ def check_schema(filepath):
     except Exception as e:
         print(e)
         is_wellformed=False
-        msg="Given JSON data is not well-formed"
+        msg= "Given JSON data is not well-formed"
         print(msg)
         f.write(msg + "\n" + str(e) + "\n")
 
