@@ -57,6 +57,15 @@ def validate_json(json_data, f):
         message = "Given JSON data is Valid"
         return True, message, error_text
 
+def get_table_template_beggining():
+    return '<table style="width:100%"><tr><th>Field name</th><th>Field value</th><th>Property name</th><th>Property value</th></tr>'
+
+def get_table_template_ending():
+    return '</table>'
+
+def create_row(field_name,field_value,prop_name,prop_value):
+    return '<tr><th>{0}</th><th>{1}</th><th>{2}</th><th>{3}</th></tr>'.format(field_name,field_value,prop_name,prop_value)
+
 
 def create_documentation(file):
 
@@ -69,7 +78,7 @@ def create_documentation(file):
 
     fieldProps = ['description','type']
 
-    doc_text = ''
+    doc_text = get_table_template_beggining()
 
     for fieldInJson in jsonObjectFragmentToSearchIn:
 
@@ -80,16 +89,18 @@ def create_documentation(file):
             if (not isinstance(value, list)):
 
                 try:
-                    doc_text += fieldInJson +' \t'+ value + '\t' + fieldProperty + ':\t' + jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty] + '\n'
+                    doc_text += create_row(fieldInJson, value, fieldProperty, jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty])
                 except:
                     print(fieldProperty + " not found in " + fieldInJson)
 
             else:
 
                 try:
-                    doc_text += fieldInJson +' \t' + fieldProperty + ':\t' + jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty] + '\n'
+                    doc_text += create_row(fieldInJson, 'ARRAY FOUND', fieldProperty, jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty])
                 except:
                     print(fieldProperty + " not found in " + fieldInJson)
+
+    doc_text += get_table_template_ending()
 
     f = open(file.replace('.json','') + "_doc.html", "w")
     f.write(doc_text + "\n")
