@@ -26,6 +26,10 @@
         {
             "long": "SYSTEM",
             "short": "SYYS"
+        }, 
+        {
+            "long": "CARD",
+            "short": "CARD"
         }
     ]
 }
