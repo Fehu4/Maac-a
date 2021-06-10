@@ -91,7 +91,7 @@ def create_documentation(file):
                 except:
                     print(fieldProperty + " not found in " + fieldInJson)
 
-    f = open(file.replace('.json','') + "_doc.html", "a")
+    f = open(file.replace('.json','') + "_doc.html", "w")
     f.write(doc_text + "\n")
     f.close()
 
