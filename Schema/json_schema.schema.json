@@ -7,7 +7,7 @@
       "type": "string"
     },
     "Table": {
-      "description": "Table name",
+      "description": "Table definition",
       "type": "array",
       "items":
         {
@@ -17,7 +17,7 @@
               "type": "string",
               "maxLength": 30,
               "pattern": ".*_REL$",
-              "description": "TODO: paattern" 
+              "description": "Table name" 
             },
             "Project": {
               "description": "Numer projektu",
