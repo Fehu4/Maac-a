@@ -59,26 +59,37 @@ def validate_json(json_data, f):
 
 
 def create_documentation(file):
-    doc_text = ''
 
     jsonObject = json.load(open(file))
-    jsonSchema = json.load(open('Schema/'+jsonObject['SchemaName'],'r'))
 
-    fields_in_doc = ['description','type']
+    jsonSchema = json.load(open('Schema/' + jsonObject['SchemaName'],'r'))
 
-    for field in jsonObject['Table'][0]:
-        for field_in_doc in fields_in_doc:
-            value = jsonObject['Table'][0][field]
+    jsonSchemaFragmentToSearchIn = jsonSchema['properties']['Table']['items']['properties']
+    jsonObjectFragmentToSearchIn = jsonObject['Table'][0]
+
+    fieldProps = ['description','type']
+
+    doc_text = ''
+
+    for fieldInJson in jsonObjectFragmentToSearchIn:
+
+        for fieldProperty in fieldProps:
+
+            value = jsonObjectFragmentToSearchIn[fieldInJson]
+
             if (not isinstance(value, list)):
+
                 try:
-                    doc_text += '\n ' + field +' \t'+ jsonObject['Table'][0][field] + '\t' + field_in_doc + ':\t' + jsonSchema['properties']['Table']['items']['properties'][field][field_in_doc]
+                    doc_text += fieldInJson +' \t'+ value + '\t' + fieldProperty + ':\t' + jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty] + '\n'
                 except:
-                    print(field_in_doc + " not found in " + field)
+                    print(fieldProperty + " not found in " + fieldInJson)
+
             else:
+
                 try:
-                    doc_text += '\n ' + field +' \t' + field_in_doc + ':\t' + jsonSchema['properties']['Table']['items']['properties'][field][field_in_doc]
+                    doc_text += fieldInJson +' \t' + fieldProperty + ':\t' + jsonSchemaFragmentToSearchIn[fieldInJson][fieldProperty] + '\n'
                 except:
-                    print(field_in_doc + " not found in " + field)
+                    print(fieldProperty + " not found in " + fieldInJson)
 
     f = open(file.replace('.json','') + "_doc.html", "a")
     f.write(doc_text + "\n")
