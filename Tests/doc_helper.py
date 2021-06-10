@@ -46,7 +46,7 @@ def create_documentation(file):
 
     for fieldInJson in jsonObjectFragmentToSearchIn:
 
-        doc_text += loop_over(fieldInJson, fieldProps)
+        doc_text += loop_over(jsonObjectFragmentToSearchIn[fieldInJson], fieldProps)
 
     doc_text += get_table_template_ending()
 
