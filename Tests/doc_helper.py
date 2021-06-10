@@ -12,14 +12,14 @@ def get_table_template_ending():
 def create_row(field_name,field_value,prop_name,prop_value):
     return '<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td></tr>'.format(field_name,field_value,prop_name,prop_value)
 
-def loop_over(jsonField, propertiesFields):
+def loop_over(jsonObject, propertiesFields):
 
     doc_text = ''
 
-    for fieldInJson in jsonField:
+    for fieldInJson in jsonObject:
         for fieldProperty in propertiesFields:
             
-            value = fieldInJson[fieldInJson]
+            value = jsonObject[fieldInJson]
 
             if (not isinstance(value, list)):
 
