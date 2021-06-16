@@ -252,7 +252,7 @@
                      "@SourceSystemId":5118,
                      "Default":{
                         "NOT NULL":true,
-                        "Description":"Brak wartości niedopuszalnyy"
+                        "Description":"Brak wartości niedopuszalny"
                      },
                      "Project":{
                         "$ref":"#/Table/Project"
