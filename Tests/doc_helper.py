@@ -27,7 +27,7 @@ def loop_over(jsonObject, propertiesFields):
             
             else:
 
-                return (create_row(fieldInJson, 'ARRAY FOUND', fieldProperty, 'test') + loop_over(value, propertiesFields))
+                return (create_row(fieldInJson, '', fieldProperty, 'test') + loop_over(value, propertiesFields))
 
 
 
