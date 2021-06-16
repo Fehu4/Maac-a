@@ -89,7 +89,7 @@ def create_documentation(file):
 
     doc_text = get_table_template_beggining()
 
-    doc_text += loop_over(jsonObject, jsonSchema, FIELD_PROPS)
+    doc_text += loop_over(jsonObject, jsonSchema, FIELD_PROPS, 0)
 
     doc_text += get_table_template_ending()
 
