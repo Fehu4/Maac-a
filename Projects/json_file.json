@@ -18,8 +18,8 @@
          "BusinessDescription":[
             {
                "@Lang":"PL",
-               "Name":"HURTOWNIiANY IiDENnTnYFIKATOR WNIOSKU",
-               "Definition":"TABeELA POoWIĄZAŃ ŁĄCZĄCA WNIOSKII (APLIKACJE) Z KARTĄ PŁĄTNICZĄ. TABELA ZAWIERA HISTORIĘ ZMIAN - NIE MA ODRĘBNEJ TABELI HISTORYCZNEJ"
+               "Name":"HURTOWNIiANY IDENTYFIKATOR WNIOSKU",
+               "Definition":"TABELA POoWIĄZAŃ ŁĄCZĄCA WNIOSKI (APLIKACJE) Z KARTĄ PŁĄTNICZĄ. TABELA ZAWIERA HISTORIĘ ZMIAN - NIE MA ODRĘBNEJ TABELI HISTORYCZNEJ"
             },
             {
                "@Lang":"EN",
