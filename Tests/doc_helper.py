@@ -12,34 +12,40 @@ def get_table_template_ending():
 def create_row(field_name,field_value,prop_name,prop_value):
     return '<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td></tr>'.format(field_name,field_value,prop_name,prop_value)
 
-def find_in_schema(jsonSchema, jsonField, props):
 
+def find_in_schema(jsonSchema, jsonField, props, found):
     for x in jsonSchema:
-        if (x == jsonField):
-            return jsonSchema[x][props]
-        elif (isinstance(x, list)):
-            find_in_schema(x,jsonField,props)
+        if (found and x == props):
+            return jsonSchema[x]
+        elif (x == jsonField and isinstance(jsonSchema[x],dict)):
+            return find_in_schema(jsonSchema[x],jsonField,props,True)
+        elif (isinstance(jsonSchema[x],dict)):
+            result =  find_in_schema(jsonSchema[x], jsonField, props, False)
+            if (result != None):
+                return result
+            else:
+                continue
 
 
 def loop_over(jsonObject, jsonSchema, propertiesFields):
     doc_text = ''
 
     for fieldInJson in jsonObject:
-        for fieldProperty in propertiesFields:
+        if (isinstance(fieldInJson, dict)):
+            doc_text += loop_over(fieldInJson, jsonSchema, propertiesFields)
+        else:
+            value = jsonObject[fieldInJson]
+            if (not isinstance(value,list)):
 
-            try:
-                value = jsonObject[fieldInJson]
-                if (not isinstance(value,list)):
+                for fieldProperty in propertiesFields:
                     doc_text += create_row(fieldInJson, value, fieldProperty,
-                                       find_in_schema(jsonSchema, fieldInJson, fieldProperty))
-                else:
-                    doc_text += (create_row(fieldInJson, '', fieldProperty,
-                                        find_in_schema(jsonSchema, fieldInJson, fieldProperty))
-                             + loop_over(value, jsonSchema, propertiesFields))
-            except TypeError:
-                doc_text += (create_row(fieldInJson, '', fieldProperty,
-                                        find_in_schema(jsonSchema, fieldInJson, fieldProperty))
-                             + loop_over(value, jsonSchema, propertiesFields))
+                                   find_in_schema(jsonSchema, fieldInJson, fieldProperty,False))
+            else:
+
+                for fieldProperty in propertiesFields:
+                    doc_text += create_row(fieldInJson, '', fieldProperty,
+                                    find_in_schema(jsonSchema, fieldInJson, fieldProperty,False))
+                doc_text += loop_over(value, jsonSchema, propertiesFields)
 
     return doc_text
 
