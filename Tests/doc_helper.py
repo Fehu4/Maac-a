@@ -3,6 +3,7 @@ import json
 import jsonschema
 
 MAIN_FIELDS = ["@NAME", "PROJECT"]
+FIELD_PROPS = ['description','type','maxLength','pattern']
 
 
 def get_table_template_beggining():
@@ -79,11 +80,9 @@ def create_documentation(file):
 
     jsonSchema = json.load(open('Schema/' + jsonObject['SchemaName'],'r'))
 
-    fieldProps = ['description','type']
-
     doc_text = get_table_template_beggining()
 
-    doc_text += loop_over(jsonObject, jsonSchema, fieldProps)
+    doc_text += loop_over(jsonObject, jsonSchema, FIELD_PROPS)
 
     doc_text += get_table_template_ending()
 
