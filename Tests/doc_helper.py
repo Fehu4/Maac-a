@@ -7,7 +7,7 @@ FIELD_PROPS = ['description','type','maxLength','pattern']
 
 
 def get_table_template_beggining():
-    return '<table style="width:100%"><tr><th style="width: 20%">Field name</th><th style="width: 40%">Field value</th><th>Property name</th><th>Property value</th></tr>'
+    return '<table style="width:100%"><tr><th style="width: 30%">Field name</th><th style="width: 50%">Field value</th><th>Property name</th><th>Property value</th></tr>'
 
 def get_table_template_ending():
     return '</table>'
@@ -89,7 +89,7 @@ def create_documentation(file):
 
     doc_text = get_table_template_beggining()
 
-    doc_text += loop_over(jsonObject, jsonSchema, FIELD_PROPS, -3)
+    doc_text += loop_over(jsonObject, jsonSchema, FIELD_PROPS, 0)
 
     doc_text += get_table_template_ending()
 
