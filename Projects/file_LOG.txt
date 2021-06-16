@@ -193,3 +193,7 @@ Element Field @FileName WH_APPL_NOO: NOO  nie znajduje się w słowniku
 TECHNICAL TESTS:
 Given JSON data is well-formed
 Given JSON data is Valid
+16/06/2021 15:12:54 - processing Projects/file.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is Valid
