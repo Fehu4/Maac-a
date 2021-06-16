@@ -7,7 +7,7 @@ FIELD_PROPS = ['description','type','maxLength','pattern']
 
 
 def get_table_template_beggining():
-    return '<table style="width:100%"><tr><th style="width: 35%">Field name</th><th>Field value</th><th>Property name</th><th>Property value</th></tr>'
+    return '<table style="width:100%"><tr><th style="width: 20%">Field name</th><th style="width: 40%">Field value</th><th>Property name</th><th>Property value</th></tr>'
 
 def get_table_template_ending():
     return '</table>'
