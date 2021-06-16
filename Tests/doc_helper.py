@@ -36,6 +36,8 @@ def loop_over(jsonObject, jsonSchema, propertiesFields):
                                         find_in_schema(jsonSchema, fieldInJson, fieldProperty))
                              + loop_over(value, jsonSchema, propertiesFields))
 
+    return doc_text
+
 
 
 def create_documentation(file):
