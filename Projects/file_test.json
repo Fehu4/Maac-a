@@ -4,14 +4,14 @@
       {
          "@NAME":"APPLICATION_CARD_REL",
          "PROJECT":"PW123456",
-         "Directive":"Createe",
+         "Directive":"Create",
          "LoadFrequency":[
             {
                "@Type":"daily",
                "Execute":true
             },
             {
-               "@Type":"weekly",
+               "@Type":"monthly",
                "Execute":false
             }
          ],
@@ -35,7 +35,7 @@
                "Value":"Klient indywidualny"
             },
             {
-               "@Id":"324",
+               "@Id":324,
                "Name":"Ontologia Danych",
                "Key":"2021:3.23.4",
                "Value":"Osoby"
