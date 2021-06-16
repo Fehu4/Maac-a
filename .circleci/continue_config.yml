@@ -61,6 +61,3 @@ jobs:
             git add Model
             git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
             git push origin circleci-project-setup
-          # git checkout main
-          # git merge circleci-project-setup
-          # git push
