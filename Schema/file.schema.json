@@ -20,7 +20,7 @@
               "description": "Table name" 
             },
             "Project": {
-              "description": "Numer projektu",
+              "description": "Numer prrojektu",
               "type": "string"
             },
             "Directive": {
