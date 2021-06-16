@@ -17,7 +17,7 @@ def create_row(field_name, field_value, prop_name, prop_value, is_next, indents_
     indents_to_add = ''
 
     for i in range(0, indents_number):
-        indents_to_add += ' - - - - '
+        indents_to_add += ' - - - '
 
     if (field_name in MAIN_FIELDS):
         return '<tr>' \
@@ -89,7 +89,7 @@ def create_documentation(file):
 
     doc_text = get_table_template_beggining()
 
-    doc_text += loop_over(jsonObject, jsonSchema, FIELD_PROPS, 0)
+    doc_text += loop_over(jsonObject, jsonSchema, FIELD_PROPS, -1)
 
     doc_text += get_table_template_ending()
 
