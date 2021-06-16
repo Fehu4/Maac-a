@@ -29,8 +29,13 @@ def loop_over(jsonObject, jsonSchema, propertiesFields):
 
             try:
                 value = jsonObject[fieldInJson]
-                doc_text += create_row(fieldInJson, value, fieldProperty,
+                if (not isinstance(value,list)):
+                    doc_text += create_row(fieldInJson, value, fieldProperty,
                                        find_in_schema(jsonSchema, fieldInJson, fieldProperty))
+                else:
+                    doc_text += (create_row(fieldInJson, '', fieldProperty,
+                                        find_in_schema(jsonSchema, fieldInJson, fieldProperty))
+                             + loop_over(value, jsonSchema, propertiesFields))
             except TypeError:
                 doc_text += (create_row(fieldInJson, '', fieldProperty,
                                         find_in_schema(jsonSchema, fieldInJson, fieldProperty))
