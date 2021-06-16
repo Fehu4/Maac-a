@@ -56,7 +56,6 @@ jobs:
             git config user.email "areoflo@gmail.com"
             git config user.name "Fehu4"
             git checkout circleci-project-setup
-            git add logs
             git add Projects
             git add Model
             git commit --allow-empty -am "Automatic commit from CircleCI [skip ci]"
