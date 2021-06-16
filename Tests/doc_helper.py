@@ -22,7 +22,7 @@ def create_row(field_name, field_value, prop_name, prop_value, is_next, indents_
     if (field_name in MAIN_FIELDS):
         return '<tr>' \
            '<td><strong style="font-size: 30px">{0}</strong></td>' \
-           '<td><strong style="font-size: 30px">{1}</strong></td>'.format(indents_to_add + field_name, field_value)
+           '<td><strong style="font-size: 30px">{1}</strong></td>'.format(field_name, field_value)
     elif (is_next and prop_value == None):
         return ''
     elif (is_next):
@@ -37,7 +37,7 @@ def create_row(field_name, field_value, prop_name, prop_value, is_next, indents_
            '<td style="border: 1px solid black">{0}</td>' \
            '<td style="border: 1px solid black">{1}</td>' \
            '<td style="border: 1px solid black">{2}</td>' \
-           '<td style="border: 1px solid black">{3}</td></tr>'.format(field_name, field_value, prop_name,
+           '<td style="border: 1px solid black">{3}</td></tr>'.format(indents_to_add + field_name, field_value, prop_name,
                                                                               prop_value)
 
 def find_in_schema(jsonSchema, jsonField, props, found):
