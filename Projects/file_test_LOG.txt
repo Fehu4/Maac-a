@@ -6,3 +6,11 @@ Given JSON data is not well-formed
 TECHNICAL TESTS:
 Given JSON data is not well-formed
 Expecting ',' delimiter: line 15 column 16 (char 344)
+16/06/2021 19:59:26 - processing Projects/file_test.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is InValid
+Table 0 Classification 1 @Id : '324' is not of type 'integer'
+Table 0 Directive : 'Createe' is not one of ['Create', 'Alter', 'Delete', 'Leave']
+Table 0 LoadFrequency 1 @Type : 'weekly' is not one of ['daily', 'monthly']
+
