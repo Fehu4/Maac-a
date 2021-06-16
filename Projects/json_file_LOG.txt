@@ -146,3 +146,12 @@ Given JSON data is Valid
 TECHNICAL TESTS:
 Given JSON data is well-formed
 Given JSON data is Valid
+16/06/2021 10:11:59 - processing Projects/json_file.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is Valid
+BUSINESS CHECKER:
+Element Table @Na@Name APPLICATION_CARD_REL: APPLICATION REL  nie znajduje się w słowniku
+Element Field @Name WH_APPL_NOHOHOHOHOH: NOHOHOHOHOH nie znajduje się w słowniku
+Element Field @FileName WH_APPL_NOO: NOO  nie znajduje się w słowniku
+
