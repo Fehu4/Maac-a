@@ -1,5 +1,5 @@
 {
-   "SchemaName" : "json_schema.schema.json",
+   "SchemaName" : "file.schema.json",
    "Table":[
       {
          "@Name":"APPLICATION_CARD_REL",
