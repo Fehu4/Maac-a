@@ -23,11 +23,13 @@ def loop_over(jsonObject, propertiesFields):
 
             if (not isinstance(value, list)):
 
-                return create_row(fieldInJson, value, fieldProperty, 'test')
+                doc_text += create_row(fieldInJson, value, fieldProperty, 'test')
             
             else:
 
-                return (create_row(fieldInJson, '', fieldProperty, 'test') + loop_over(value, propertiesFields))
+                doc_text += (create_row(fieldInJson, '', fieldProperty, 'test') + loop_over(value, propertiesFields))
+
+    return doc_text
 
 
 
