@@ -6,3 +6,10 @@ Table 0 Classification 0 @Id : '1234lkj' is not of type 'integer'
 Table 1 Classification 0 @Id : '1234lkj' is not of type 'integer'
 Table 1 @Name : 'APPLICATION_DETAIL' does not match '.*_REL$'
 
+16/06/2021 16:43:18 - processing Projects/PW0003/PW0003_v1.0.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is InValid
+Table 0 Classification 0 @Id : '1234lkj' is not of type 'integer'
+Table 1 Classification 0 @Id : '1234lkj' is not of type 'integer'
+
