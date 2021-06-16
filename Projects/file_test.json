@@ -11,7 +11,7 @@
                "Execute":true
             },
             {
-               "@Type":"weekly"
+               "@Type":"weekly",
                "Execute":false
             }
          ],
