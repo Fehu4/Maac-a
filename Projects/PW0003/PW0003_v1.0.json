@@ -2,8 +2,8 @@
    "SchemaName" : "file.schema.json",
    "Table":[
       {
-         "@Name":"APPLICATION_CARD_REL",
-         "Project":"PW123456",
+         "@NAME":"APPLICATION_CARD_REL",
+         "PROJECT":"PW123456",
          "Directive":"Create",
          "LoadFrequency":[
             {
@@ -141,8 +141,8 @@
          ]
       },
 	  {
-         "@Name":"APPLICATION_DETAIL",
-         "Project":"PW123456",
+         "@NAME":"APPLICATION_DETAIL",
+         "PROJECT":"PW123456",
          "Directive":"Create",
          "LoadFrequency":[
             {
