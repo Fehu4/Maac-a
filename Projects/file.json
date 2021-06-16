@@ -18,7 +18,7 @@
          "BusinessDescription":[
             {
                "@Lang":"PL",
-               "Name":"HURTOWNIANY IDENTYFIKATOR WNIOSKU",
+               "Name":"HURTOWNIANY IDENTYFIKATOR WNIOSKUu",
                "Definition":"TABELA POWIĄZAŃ ŁĄCZĄCA WNIOSKI (APLIKACJE) Z KARTĄ PŁĄTNICZĄ. TABELA ZAWIERA HISTORIĘ ZMIAN - NIE MA ODRĘBNEJ TABELI HISTORYCZNEJ"
             },
             {
