@@ -189,3 +189,7 @@ Element Table @Na@Name APPLICATION_CARD_REL: APPLICATION REL  nie znajduje się 
 Element Field @Name WH_APPL_NOHOHOH: NOHOHOH nie znajduje się w słowniku
 Element Field @FileName WH_APPL_NOO: NOO  nie znajduje się w słowniku
 
+16/06/2021 14:37:34 - processing Projects/file.json
+TECHNICAL TESTS:
+Given JSON data is well-formed
+Given JSON data is Valid
