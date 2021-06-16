@@ -44,14 +44,11 @@ def create_documentation(file):
 
     jsonSchema = json.load(open('Schema/' + jsonObject['SchemaName'],'r'))
 
-    jsonSchemaFragmentToSearchIn = jsonSchema['properties']['Table']['items']['properties']
-    jsonObjectFragmentToSearchIn = jsonObject['Table'][0]
-
     fieldProps = ['description','type']
 
     doc_text = get_table_template_beggining()
 
-    doc_text += loop_over(jsonObjectFragmentToSearchIn, jsonSchema, fieldProps)
+    doc_text += loop_over(jsonObject, jsonSchema, fieldProps)
 
     doc_text += get_table_template_ending()
 
