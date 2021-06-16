@@ -12,11 +12,17 @@ def get_table_template_beggining():
 def get_table_template_ending():
     return '</table>'
 
-def create_row(field_name, field_value, prop_name, prop_value, is_next):
+def create_row(field_name, field_value, prop_name, prop_value, is_next, indents_number):
+
+    indents_to_add = ''
+
+    for i in range(0, indents_number):
+        indents_to_add += ' - '
+
     if (field_name in MAIN_FIELDS):
         return '<tr>' \
            '<td><strong style="font-size: 30px">{0}</strong></td>' \
-           '<td><strong style="font-size: 30px">{1}</strong></td>'.format(field_name, field_value)
+           '<td><strong style="font-size: 30px">{1}</strong></td>'.format(indents_to_add + field_name, field_value)
     elif (is_next and prop_value == None):
         return ''
     elif (is_next):
@@ -48,27 +54,28 @@ def find_in_schema(jsonSchema, jsonField, props, found):
                 continue
 
 
-def loop_over(jsonObject, jsonSchema, propertiesFields):
+def loop_over(jsonObject, jsonSchema, propertiesFields, indents_number):
+
     doc_text = ''
 
     for fieldInJson in jsonObject:
         if (fieldInJson in MAIN_FIELDS):
-            doc_text += create_row(fieldInJson, jsonObject[fieldInJson], '', '', False)
+            doc_text += create_row(fieldInJson, jsonObject[fieldInJson], '', '', False, indents_number + 1)
         elif (isinstance(fieldInJson, dict)):
-            doc_text += loop_over(fieldInJson, jsonSchema, propertiesFields)
+            doc_text += loop_over(fieldInJson, jsonSchema, propertiesFields, indents_number + 1)
         else:
             value = jsonObject[fieldInJson]
             if (not isinstance(value,list)):
 
                 for fieldProperty in propertiesFields:
                     doc_text += create_row(fieldInJson, value, fieldProperty,
-                                   find_in_schema(jsonSchema, fieldInJson, fieldProperty,False),propertiesFields.index(fieldProperty))
+                                   find_in_schema(jsonSchema, fieldInJson, fieldProperty,False),propertiesFields.index(fieldProperty), indents_number + 1)
             else:
 
                 for fieldProperty in propertiesFields:
                     doc_text += create_row(fieldInJson, '', fieldProperty,
-                                    find_in_schema(jsonSchema, fieldInJson, fieldProperty,False),propertiesFields.index(fieldProperty))
-                doc_text += loop_over(value, jsonSchema, propertiesFields)
+                                    find_in_schema(jsonSchema, fieldInJson, fieldProperty,False),propertiesFields.index(fieldProperty), indents_number + 1)
+                doc_text += loop_over(value, jsonSchema, propertiesFields, indents_number + 1)
 
     return doc_text
 
