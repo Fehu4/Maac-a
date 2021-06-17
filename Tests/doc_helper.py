@@ -3,7 +3,7 @@ import json
 import jsonschema
 
 MAIN_FIELDS = ["@NAME", "PROJECT"]
-FIELD_PROPS = ['description','type','maxLength','pattern']
+FIELD_PROPS = ['type','description','maxLength','pattern']
 
 
 def get_table_template_beggining():
