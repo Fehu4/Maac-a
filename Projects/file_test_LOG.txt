@@ -1,0 +1,4 @@
+17/06/2021 12:07:34 - processing Projects/file_test.json
+TECHNICAL TESTS:
+Given JSON data is not well-formed
+Expecting ',' delimiter: line 15 column 16 (char 344)
